@@ -1,26 +1,26 @@
-/** @type {import('tailwindcss').Config} */
-const config = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
+module.exports = {
+    content: [
+      "./app/**/*.{js,ts,jsx,tsx}",
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
       screens: {
-        'xs': '320px',
-        'sm': '640px',
+        '2xs': '320px',
+        'xs': '375px',
+        'sm': '425px',
         'md': '768px',
         'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1536px',
+        'xl': '1440px',
+        '2xl': '1920px',
+        '3xl': '2560px',
       },
-      fontFamily: {
+      extend: {
+        fontFamily: {
         poppins: ['var(--font-poppins)'],
         playball: ['var(--font-playball)'],
       },
+      },
     },
-  },
-  plugins: [],
-};
-
-export default config;
+    plugins: [],
+  }
