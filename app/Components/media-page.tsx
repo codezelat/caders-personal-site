@@ -42,9 +42,9 @@ function MediaPage() {
               <p className="text-gray-600 mb-4 text-lg">
                 Keynote speaker on &quot;The Future of Education in a Digital Economy&quot;
               </p>
-              <button className="bg-[#03045E] text-white px-6 py-3 rounded font-medium hover:bg-[#02034a] transition-colors">
-                Dubai, UAE - March 2025
-              </button>
+                <Button onClick={handleSubmit}>
+                    Dubai, UAE - March 2025
+                </Button>
             </div>
           </div>
 
@@ -92,9 +92,9 @@ function MediaPage() {
               <p className="text-gray-600 mb-4 text-lg">
                 Keynote speaker on &quot;The Future of Education in a Digital Economy&quot;
               </p>
-              <button className="bg-[#03045E] text-white px-6 py-3 rounded font-medium hover:bg-[#02034a] transition-colors">
-                Dubai, UAE - March 2025
-              </button>
+                <Button onClick={handleSubmit}>
+                    Dubai, UAE - March 2025
+                </Button>
             </div>
           </div>
         </div>

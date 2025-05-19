@@ -1,53 +1,43 @@
 'use client';
+
 import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  disabled?: boolean;
-  type?: 'button' | 'submit' | 'reset';
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
   className?: string;
 }
 
-export default function Button({
+const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
-  disabled = false,
-  type = 'button',
+  variant = 'primary',
+  size = 'md',
   className = '',
-}: ButtonProps) {
-  const buttonStyles = [
-    
-    'bg-[#03045E]',
-    'text-white',
-    'px-6',
-    'py-3', 
-    'rounded',
-    'font-poppins',
-    'font-medium',
-    'transition-colors',
-    'cursor-pointer',
-    // Hover state
-    'hover:bg-[#02034a]',
-    // Focus state for accessibility
-    'focus:outline-none',
-    'focus:ring-2',
-    'focus:ring-[#03045E]',
-    'focus:ring-offset-2',
-   
-    disabled ? 'opacity-50 cursor-not-allowed' : '',
-    // Custom className
-    className
-  ].filter(Boolean).join(' ');
-
+}) => {
+  const baseStyles = "font-poppins font-medium rounded-lg transition-colors";
+  
+  const variantStyles = {
+    primary: "bg-[#03045E] text-white hover:bg-[#02034d]",
+    secondary: "bg-white text-[#03045E] border border-[#03045E] hover:bg-gray-50"
+  };
+  
+  const sizeStyles = {
+    sm: "px-4 py-2 text-sm",
+    md: "px-6 py-3 text-base",
+    lg: "px-8 py-4 text-lg"
+  };
+  
   return (
     <button
-      type={type}
       onClick={onClick}
-      disabled={disabled}
-      className={buttonStyles}
+      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
     >
       {children}
     </button>
   );
-}
+};
+
+export default Button;
