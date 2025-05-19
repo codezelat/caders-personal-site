@@ -1,63 +1,44 @@
-import Link from 'next/link';
-import React from 'react';
-import Image from 'next/image';
+import Link from "next/link";
+import React from "react";
 
-interface HeaderProps {
-  // You can define props here if needed
-}
-
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC = () => {
   return (
-    <header className="fixed w-[1488px] h-[80px] pt-[33px] rounded-[16px]   bg-[#ffffff] shadow-lg">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    <header className="fixed w-full px-4 pt-8">
+      <div className="max-w-7xl mx-auto flex justify-between items-center bg-white shadow-lg rounded-[20px] p-4 z-50">
+        {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/">
-          <div className="playball-regular font-[400px] text-[42px] -tracking-4 text-[#03045E]">Cader <span className="playball-regular font-[400px] text-[24px] -tracking-4 text-[#000000]">Rahmathulla</span>
-            </div></Link>
-          
-            
+            <div className="font-playball text-4xl text-[#03045E]">
+              Cader{" "}
+              <span className="font-playball text-2xl text-black">
+                Rahmathulla
+              </span>
+            </div>
+          </Link>
         </div>
-        
-        <nav className=" md:block ">
-          <ul className="flex space-x-8">
-            <li>
-              <Link href="#home" className="hover:text-blue-600 transition-colors">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="#about" className="hover:text-blue-600 transition-colors">
-                Leadership
-              </Link>
-            </li>
-            <li>
-              <Link href="#services" className="hover:text-blue-600 transition-colors">
-                Ventures
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" className="hover:text-blue-600 transition-colors">
-                Investments
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" className="hover:text-blue-600 transition-colors">
-                Media
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" className="hover:text-blue-600 transition-colors">
-                Contact
-              </Link>
-            </li>
-            
+
+        {/* Navigation */}
+        <nav className="flex items-center">
+          <ul className="flex items-center gap-2">
+            {[
+              "About",
+              "Leadership",
+              "Ventures",
+              "Investments",
+              "Media",
+              "Contact",
+            ].map((item) => (
+              <li key={item}>
+                <Link
+                  href={`#${item.toLowerCase()}`}
+                  className="font-poppins font-medium text-base hover:text-[#03045E] transition-colors px-4 py-2 rounded-lg"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
-
-        <button className="">
-          {/* Hamburger menu icon for mobile */}
-         
-        </button>
       </div>
     </header>
   );
