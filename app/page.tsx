@@ -1,9 +1,12 @@
 'use client';
 import Image from 'next/image'
 import Header from './Components/Header'
+import About from './Components/About';
 import LeadershipPortfolio from './Components/leadership'
 import MediaPage from './Components/media-page'
 import Button from './Components/ui/Button' 
+import './globals.css';
+
 
 
 export default function Page() {
@@ -58,6 +61,7 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <About/>
       <LeadershipPortfolio/>
       <MediaPage/>
     </div>
