@@ -3,6 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-normal-responsive {
+    @apply xl:text-[23px] lg:text-[22px] md:text-[22px] sm:text-[22px] xs:text-[22px] 2xs:text-[22px];
+  }
+
+  .text-heading-responsive {
+    @apply xl:text-[48px] lg:text-[40px] md:text-[40px] sm:text-[40px] xs:text-[40px] 2xs:text-[40px];
+  }
+
+  .text-small-responsive {
+    @apply xl:text-[19px] lg:text-[18px] md:text-[18px] sm:text-[18px] xs:text-[18px] 2xs:text-[18px];
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -130,4 +144,12 @@ body {
   font-family: "Playball";
   font-weight: 400;
   font-style: normal;
+}
+
+.container-wrapper {
+  position: relative;
+  top: 160px;
+  right: 120px;
+  bottom: 160px;
+  left: 120px;
 }

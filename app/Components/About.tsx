@@ -5,20 +5,20 @@ const About: React.FC = () => {
   const stats = [
     { number: "15+", text: "Active Leadership Roles" },
     { number: "4", text: "Countries" },
-    { number: "12", text: "Ventures" }
+    { number: "12", text: "Ventures" },
   ];
 
   return (
-    <div className="pt-[160px] pb-[20px] bg-[#ffffff]">
-      <div className="flex flex-row items-center justify-center gap-[40px]">
+    <div className="pt-[100px] sm:pt-[60px] xs:pt-[40px] pb-[20px] bg-[#ffffff] xl:px-[120px] lg:px-[80px] md:px-[40px] px-[20px]">
+      <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col xs:flex-col 2xs:flex-col  items-center justify-center gap-[40px]">
         <div>
-          <div className="poppins-medium text-[48px] leading-[120%] items-center pb-[40px]">
+          <div className="poppins-medium text-heading-responsive  leading-[120%] items-center pb-[40px]">
             About{" "}
             <span className="playball-regular text-[80px] leading-[120%] items-center">
               Cader
             </span>
           </div>
-          <p className="w-[628px] h-[456px] poppins-light text-[23px] leading-[120%] items-start">
+          <p className="w-auto xl:w-[628px] lg:w-[400px] h-auto poppins-light text-text-normal-responsive leading-[120%] items-start">
             As a multi-sector leader spanning education, technology, and
             corporate strategy, I focus on building visionary organizations that
             create lasting impact. My approach combines innovative thinking with
@@ -34,26 +34,28 @@ const About: React.FC = () => {
           </p>
         </div>
         <div>
-          <img
+          <Image
+            width={800}
+            height={523}
             src="/images/about_hero.jpg"
             alt="Cader Rahmathulla"
-            className="w-[800px] h-[523px] rounded-[32px] border-[8px] border-[#03045E] object-cover"
+            className="w-auto h-auto rounded-[32px] border-[8px] border-[#03045E] object-cover"
           />
         </div>
       </div>
 
       {/* Stats Section */}
-      <div className="flex justify-center mt-[40px] mb-[20px]">
-        <div className="flex gap-[40px]">
+      <div className="flex  justify-center  mt-[40px] mb-[20px]">
+        <div className="flex xl:flex-row md:flex-row lg:flex-row sm:flex-col xs:flex-col 2xs:flex-col gap-[40px]">
           {stats.map((stat, index) => (
-            <div 
+            <div
               key={index}
-              className="w-[470px] h-[136px] rounded-[24px] border-[4px] border-[#03045E] p-[32px] flex flex-col justify-center items-center"
+              className="w-[470px] xl:w-[370px] lg:w-[250px] md:w-[200px] sm:w-[370px] xs:w-[320px] 2xs:w-[270px]  h-[136px] rounded-[24px] border-[4px] border-[#03045E] p-[32px] flex flex-col justify-center items-center"
             >
-              <div className="poppins-bold text-[40px] leading-[120%] text-[#03045E] items-center">
+              <div className="poppins-bold text-[40px] xl:text-[40px] lg:text-[40px] md:text-[36px] sm:text-[30px] xs:text-[30px] 2xs:text-[30px] leading-[120%] text-[#03045E] items-center">
                 {stat.number}
               </div>
-              <div className="poppins-normal text-[23px] leading-[120%] items-center">
+              <div className="poppins-normal text-text-normal-responsive leading-[120%] items-center">
                 {stat.text}
               </div>
             </div>
