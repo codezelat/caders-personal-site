@@ -4,10 +4,10 @@ import Image from 'next/image';
 
 const LeadershipPortfolio = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto py-16 px-4">
+    <div className="w-full max-w-7xl mx-auto py-16 px-4 font-poppins">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">Leadership Portfolio</h1>
-        <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+        <p className="text-gray-600 text-lg leading-relaxed text-normal-responsive mx-auto">
           A track record of executive leadership across diverse sectors, driving innovation and strategic growth.
         </p>
       </div>
@@ -85,16 +85,16 @@ const LeadershipPortfolio = () => {
           {/* Right column - Text content */}
           <div className="w-1/3 pl-6">
             <div className="flex flex-col justify-center h-24 mb-32">
-              <p className="text-gray-600 text-sm mb-1">Expanding Global Strategy</p>
-              <h3 className="text-xl font-bold">Executive Board Member – LBC UK</h3>
+              <p className="text-gray-600 text-sm mb-1 text-small-responsive">Expanding Global Strategy</p>
+              <h3 className="text-xl font-bold text-normal-responsive">Executive Board Member – LBC UK</h3>
             </div>
             <div className="flex flex-col justify-center h-24 mb-32">
-              <p className="text-gray-600 text-sm mb-1">Transforming Education</p>
-              <h3 className="text-xl font-bold">CEO – SITC Campus</h3>
+              <p className="text-gray-600 text-sm mb-1 text-small-responsive">Transforming Education</p>
+              <h3 className="text-xl font-bold text-normal-responsive">CEO – SITC Campus</h3>
             </div>
             <div className="flex flex-col justify-center h-24">
-              <p className="text-gray-600 text-sm mb-1">Fueling Digital Innovation</p>
-              <h3 className="text-xl font-bold">COO – Codezela Technologies</h3>
+              <p className="text-gray-600 text-sm mb-1 text-small-responsive">Fueling Digital Innovation</p>
+              <h3 className="text-xl font-bold text-normal-responsive">COO – Codezela Technologies</h3>
             </div>
           </div>
         </div>

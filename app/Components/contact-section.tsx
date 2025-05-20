@@ -56,7 +56,7 @@ export default function ContactSection() {
 
   return (
     <section className="w-full py-12 bg-[#1a1f2e] text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
-      <div className="container px-4 mx-auto max-w-6xl">
+      <div className="px-4 mx-auto max-w-6xl">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-normal mb-2">
             Connect with <span style={{ fontFamily: "'Playball', cursive" }}>Cader</span>

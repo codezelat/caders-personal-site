@@ -9,14 +9,14 @@ function MediaPage() {
     };
     
   return (
-    <div className='bg-white'>
-      <div className="container mx-auto flex flex-col items-center justify-center py-16 px-4 max-w-4xl">
+    <div className='bg-white flex flex-col items-center justify-center font-poppins'>
+      <div className="mx-auto  py-16 px-4 max-w-4xl">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">
+          <h1 className="text-4xl font-bold text-heading-responsive text-black mb-6">
             Media Features & Appearances
           </h1>
-          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl">
+          <p className="text-gray-600 text-sm text-small-responsive font-poppins leading-relaxed ">
             Providing in-depth insights on effective leadership strategies, groundbreaking innovations, and emerging industry
             trends through various global platforms, fostering a community of forward-thinking professionals.
           </p>
@@ -36,10 +36,10 @@ function MediaPage() {
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-2xl font-bold text-black mb-3">
+              <h2 className="text-2xl font-bold text-black mb-3 text-normal-responsive">
                 Global Leadership Summit
               </h2>
-              <p className="text-gray-600 mb-4 text-lg">
+              <p className="text-gray-600 mb-4 text-lg text-small-responsive">
                 Keynote speaker on &quot;The Future of Education in a Digital Economy&quot;
               </p>
                 <Button onClick={handleSubmit}>
@@ -60,10 +60,10 @@ function MediaPage() {
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-2xl font-bold text-black mb-3">
+              <h2 className="text-2xl font-bold text-black mb-3 text-normal-responsive">
                 Global Leadership Summit
               </h2>
-              <p className="text-gray-600 mb-4 text-lg">
+              <p className="text-gray-600 mb-4 text-lg text-small-responsive">
                 Keynote speaker on &quot;The Future of Education in a Digital Economy&quot;
               </p>
                 <Button onClick={handleSubmit}>
@@ -86,10 +86,10 @@ function MediaPage() {
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-2xl font-bold text-black mb-3">
+              <h2 className="text-2xl font-bold text-black mb-3 text-normal-responsive">
                 Global Leadership Summit
               </h2>
-              <p className="text-gray-600 mb-4 text-lg">
+              <p className="text-gray-600 mb-4 text-lg text-small-responsive">
                 Keynote speaker on &quot;The Future of Education in a Digital Economy&quot;
               </p>
                 <Button onClick={handleSubmit}>

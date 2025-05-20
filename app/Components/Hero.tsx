@@ -10,15 +10,14 @@ import { heroData } from '../data/herodata';
 const Hero = () => {
   const handleExploreClick = () => {
     console.log('Explore My Ventures clicked');
-    // Add navigation logic here
   };
 
   return (
-    <div className="container mx-auto px-4 md:px-8 lg:px-32 flex flex-col-reverse lg:flex-row items-center justify-between pt-32 md:pt-40">
+    <div className="bg-[#efecff] mx-auto px-4 md:px-8 lg:px-32 flex flex-col-reverse lg:flex-row items-center justify-between pt-32 md:pt-40">
       {/* Left Content */}
       <div className="w-full lg:w-3/5 py-8 lg:py-16">
         <div className="mb-6">
-          <h1 className="font-playball text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-[#03045E] mb-8">
+          <h1 className="font-playball text-[128px] sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-[#03045E] mb-8">
             {heroData.firstName}
           </h1>
           <h1 className="font-playball text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-black -mt-2 sm:-mt-4 md:-mt-6">
@@ -26,11 +25,11 @@ const Hero = () => {
           </h1>
         </div>
         
-        <p className="font-poppins text-xl sm:text-2xl md:text-3xl font-medium leading-tight text-gray-700 mb-6 max-w-md">
+        <p className="font-poppins text-[33px] text-normal-responsive font-medium leading-tight text-gray-700 mb-6 max-w-md">
           {heroData.tagline}
         </p>       
         
-        <div className="flex flex-wrap items-center gap-2 text-base md:text-lg font-medium text-gray-800 mb-8">
+        <div className="font-poppins flex flex-wrap items-center gap-2 text-base text-normal-responsive font-medium text-gray-800 mb-8">
           {heroData.roles.map((role, index) => (
             <React.Fragment key={role}>
               <span>{role}</span>
