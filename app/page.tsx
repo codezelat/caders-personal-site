@@ -4,17 +4,25 @@ import LeadershipPortfolio from "./Components/leadership";
 import MediaPage from "./Components/media-page";
 import About from "./Components/About";
 import Industry from "./Components/Industry";
+import FooterContent from "./Components/Footer-Content";
+import FooterPage from "./Components/footer";
+import ContactSection from "./Components/contact-section";
+import Header from "./Components/Header";
 
 
 
 export default function Page() {
   return (
     <div className="bg-[#FFFFFF66] backdrop-blur-[8px] min-h-screen">
+      <Header/>
       <Hero/>
       <About/>
       <LeadershipPortfolio/>
       <MediaPage/>
       <Industry/>
+      <ContactSection/>
+      <FooterContent/>
+      <FooterPage/>
     </div>
   )
 }

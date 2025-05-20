@@ -26,7 +26,7 @@ const About: React.FC = () => {
             outcomes.
             <br className="h-[24px]" />{" "}
             <span className="block mt-6">
-              Throughout my career, I've prioritized three core values:
+              Throughout my career, I&apos;ve prioritized three core values:
               visionary leadership that anticipates future trends, strategic
               expansion that creates opportunities, and legacy-building that
               ensures continued impact long after initial success.

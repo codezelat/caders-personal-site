@@ -1,73 +1,103 @@
-
 'use client';
+import React from 'react';
 import Image from 'next/image';
-import leadershipData from '../data/leadershipData';
 
 const LeadershipPortfolio = () => {
   return (
-    <div className="w-full max-w-5xl relative flex items-start justify-between mx-auto py-16 px-4">
-      {/* Left Column - All Logos */}
-      <div className="flex flex-col items-end w-1/3 pr-8">
-        {leadershipData.map((item, index) => (
-          <div 
-            key={item.id} 
-            className={`p-2.5 relative ${index !== leadershipData.length - 1 ? 'mb-32' : ''}`}
-            style={{ width: item.logoWidth, height: item.logoHeight }}
-          >
-            <Image 
-              src={item.logoSrc}
-              alt={item.logoAlt}
-              width={item.logoWidth}
-              height={item.logoHeight}
-              className="object-contain"
-            />
-          </div>
-        ))}
+    <div className="w-full max-w-7xl mx-auto py-16 px-4">
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">Leadership Portfolio</h1>
+        <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+          A track record of executive leadership across diverse sectors, driving innovation and strategic growth.
+        </p>
       </div>
 
-      {/* Center Column - Timeline with Lines */}
-      <div className="relative flex flex-col items-center" style={{ minHeight: '600px' }}>
-        {/* Vertical Dotted Line */}
-        <div 
-          className="absolute left-1/2 transform -translate-x-1/2 border-l-4 border-dotted border-blue-500"
-          style={{ 
-            height: '532px',
-            top: '0px'
-          }}
-        />
-        
-        {/* Blue Diamond at Top */}
-        <div className="relative z-10 mb-8">
-          <div className="w-6 h-6 bg-blue-500 transform rotate-45"></div>
-        </div>
-        
-        {/* Timeline Items with Horizontal Lines */}
-        {leadershipData.map((item) => (
-          <div key={`timeline-${item.id}`} className="relative flex items-center mb-32 last:mb-0">
-            {/* Horizontal Dotted Line */}
-            <div 
-              className="border-t-2 border-dotted border-gray-400"
-              style={{ width: '214px' }}
-            />
-            {/* Black Dot at End */}
-            <div className="w-3 h-3 bg-black rounded-full"></div>
+      <div className="relative">
+        {/* Main container */}
+        <div className="flex relative">
+          {/* Vertical timeline line */}
+          <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 z-0">
+            <div className="h-full border-l-4 border-blue-600 border-dashed"></div>
           </div>
-        ))}
-        
-        {/* Blue Circle at Bottom */}
-        <div className="relative z-10 mt-8">
-          <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
-        </div>
-      </div>
+          
+          {/* Diamond at top */}
+          <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
+            <div className="w-6 h-6 rotate-45 bg-blue-600"></div>
+          </div>
+          
+          {/* Circle at bottom */}
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-10">
+            <div className="w-6 h-6 rounded-full bg-[#03045E]"></div>
+          </div>
 
-      {/* Right Column - All Text Content */}
-      <div className="flex flex-col w-2/3 pl-8">
-        {leadershipData.map((item, index) => (
-          <div key={item.id} className={index !== leadershipData.length - 1 ? 'mb-32' : ''}>
-            <p className="text-gray-600 text-sm">{item.category}</p>
-            <h3 className="text-xl font-bold">{item.title}</h3>
+          {/* Left column - Logos */}
+          <div className="w-1/3 pr-6">
+            <div className="flex justify-end items-center h-24 mb-32">
+              <Image 
+                src="/images/lbcicon.png"
+                alt="London Business Consultancy"
+                width={175}
+                height={60}
+                className="object-contain"
+              />
+            </div>
+            <div className="flex justify-end items-center h-24 mb-32">
+              <Image 
+                src="/images/sitsicon.jpg"
+                alt="SITC Campus"
+                width={175}
+                height={60}
+                className="object-contain"
+              />
+            </div>
+            <div className="flex justify-end items-center h-24">
+              <Image 
+                src="/images/codezelaicon.png"
+                alt="Codezela Technologies"
+                width={175}
+                height={60}
+                className="object-contain"
+              />
+            </div>
           </div>
-        ))}
+          
+          {/* Middle column - Timeline nodes and horizontal lines */}
+          <div className="w-1/3 relative">
+            {/* First node and line */}
+            <div className="relative flex items-center h-24 mb-32">
+              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
+              <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
+            </div>
+            
+            {/* Second node and line */}
+            <div className="relative flex items-center h-24 mb-32">
+              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
+              <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
+            </div>
+            
+            {/* Third node and line */}
+            <div className="relative flex items-center h-24">
+              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
+              <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
+            </div>
+          </div>
+          
+          {/* Right column - Text content */}
+          <div className="w-1/3 pl-6">
+            <div className="flex flex-col justify-center h-24 mb-32">
+              <p className="text-gray-600 text-sm mb-1">Expanding Global Strategy</p>
+              <h3 className="text-xl font-bold">Executive Board Member – LBC UK</h3>
+            </div>
+            <div className="flex flex-col justify-center h-24 mb-32">
+              <p className="text-gray-600 text-sm mb-1">Transforming Education</p>
+              <h3 className="text-xl font-bold">CEO – SITC Campus</h3>
+            </div>
+            <div className="flex flex-col justify-center h-24">
+              <p className="text-gray-600 text-sm mb-1">Fueling Digital Innovation</p>
+              <h3 className="text-xl font-bold">COO – Codezela Technologies</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
