@@ -3,6 +3,7 @@ import Hero from "./Components/Hero";
 import LeadershipPortfolio from "./Components/leadership";
 import MediaPage from "./Components/media-page";
 import About from "./Components/About";
+import Industry from "./Components/Industry";
 
 
 
@@ -13,6 +14,7 @@ export default function Page() {
       <About/>
       <LeadershipPortfolio/>
       <MediaPage/>
+      <Industry/>
     </div>
   )
 }
