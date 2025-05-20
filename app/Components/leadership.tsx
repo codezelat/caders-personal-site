@@ -1,10 +1,11 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import MobileviewLeadershipPage from './mobileview-leadership';
 
 const LeadershipPortfolio = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto py-16 px-4 font-poppins">
+    <div className="w-full max-w-7xl mx-auto py-12 px-4 sm:px-6 font-poppins">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">Leadership Portfolio</h1>
         <p className="text-gray-600 text-lg leading-relaxed text-normal-responsive mx-auto">
@@ -12,7 +13,8 @@ const LeadershipPortfolio = () => {
         </p>
       </div>
 
-      <div className="relative">
+      {/* Desktop Timeline - Hidden on mobile */}
+      <div className="relative hidden md:block">
         {/* Main container */}
         <div className="flex relative">
           {/* Vertical timeline line */}
@@ -31,31 +33,31 @@ const LeadershipPortfolio = () => {
           </div>
 
           {/* Left column - Logos */}
-          <div className="w-1/3 pr-6">
+          <div className="w-1/3 pr-10">
             <div className="flex justify-end items-center h-24 mb-32">
               <Image 
                 src="/images/lbcicon.png"
                 alt="London Business Consultancy"
-                width={175}
-                height={60}
+                width={247}
+                height={90}
                 className="object-contain"
               />
             </div>
             <div className="flex justify-end items-center h-24 mb-32">
               <Image 
-                src="/images/sitsicon.jpg"
+                src="/images/Sitc.jpg"
                 alt="SITC Campus"
-                width={175}
-                height={60}
+                width={200}
+                height={90}
                 className="object-contain"
               />
             </div>
             <div className="flex justify-end items-center h-24">
               <Image 
-                src="/images/codezelaicon.png"
+                src="/images/codezela.png"
                 alt="Codezela Technologies"
-                width={175}
-                height={60}
+                width={207}
+                height={120}
                 className="object-contain"
               />
             </div>
@@ -65,40 +67,55 @@ const LeadershipPortfolio = () => {
           <div className="w-1/3 relative">
             {/* First node and line */}
             <div className="relative flex items-center h-24 mb-32">
+              {/* Center node */}
               <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
+              {/* Line from center to right */}
               <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
+              {/* Right dot */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
             </div>
             
             {/* Second node and line */}
             <div className="relative flex items-center h-24 mb-32">
+              {/* Center node */}
               <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
+              {/* Line from center to right */}
               <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
+              {/* Right dot */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
             </div>
             
             {/* Third node and line */}
             <div className="relative flex items-center h-24">
+              {/* Center node */}
               <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
+              {/* Line from center to right */}
               <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
+              {/* Right dot */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
             </div>
           </div>
           
           {/* Right column - Text content */}
-          <div className="w-1/3 pl-6">
+          <div className="w-1/3 pl-10">
             <div className="flex flex-col justify-center h-24 mb-32">
-              <p className="text-gray-600 text-sm mb-1 text-small-responsive">Expanding Global Strategy</p>
-              <h3 className="text-xl font-bold text-normal-responsive">Executive Board Member – LBC UK</h3>
+              <p className="text-gray-600 text-lg mb-1 ">Expanding Global Strategy</p>
+              <h3 className="text-[20px] font-bold">Executive Board Member – LBC UK</h3>
             </div>
             <div className="flex flex-col justify-center h-24 mb-32">
-              <p className="text-gray-600 text-sm mb-1 text-small-responsive">Transforming Education</p>
-              <h3 className="text-xl font-bold text-normal-responsive">CEO – SITC Campus</h3>
+              <p className="text-gray-600 text-lg mb-1">Transforming Education</p>
+              <h3 className="text-[20px] font-bold">CEO – SITC Campus</h3>
             </div>
             <div className="flex flex-col justify-center h-24">
-              <p className="text-gray-600 text-sm mb-1 text-small-responsive">Fueling Digital Innovation</p>
-              <h3 className="text-xl font-bold text-normal-responsive">COO – Codezela Technologies</h3>
+              <p className="text-gray-600 text-lg mb-1">Fueling Digital Innovation</p>
+              <h3 className="text-[20px] font-bold">COO – Codezela Technologies</h3>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Mobile View - Only visible on mobile */}
+    <MobileviewLeadershipPage/>
     </div>
   );
 };

@@ -17,15 +17,15 @@ const Hero = () => {
       {/* Left Content */}
       <div className="w-full lg:w-3/5 py-8 lg:py-16">
         <div className="mb-6">
-          <h1 className="font-playball text-[128px] sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-[#03045E] mb-8">
+          <h1 className="font-playball text-[80px]  sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-[#03045E] mb-8">
             {heroData.firstName}
           </h1>
-          <h1 className="font-playball text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-black -mt-2 sm:-mt-4 md:-mt-6">
+          <h1 className="font-playball text-[70px] text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight text-black -mt-2 sm:-mt-4 md:-mt-6">
             {heroData.lastName}
           </h1>
         </div>
         
-        <p className="font-poppins text-[33px] text-normal-responsive font-medium leading-tight text-gray-700 mb-6 max-w-md">
+        <p className="font-poppins text-[25px] text-normal-responsive font-medium leading-tight text-gray-700 mb-6 max-w-md">
           {heroData.tagline}
         </p>       
         

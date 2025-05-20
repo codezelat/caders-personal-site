@@ -5,10 +5,9 @@ import { useState } from "react"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
-
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 
 export default function ContactSection() {
   const [name, setName] = useState("")
@@ -157,7 +156,7 @@ export default function ContactSection() {
                   <InstagramIcon/>
                 </a>
                 <a href="#" className="text-white hover:text-blue-400 transition-colors">
-                  <FacebookRoundedIcon  />
+                  <FacebookRoundedIcon />
                 </a>
               </div>
             </div>
