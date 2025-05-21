@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Poppins, Playball } from 'next/font/google'
 import './globals.css'
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 
 // Font configurations
 const poppins = Poppins({
