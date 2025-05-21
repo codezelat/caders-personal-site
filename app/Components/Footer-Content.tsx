@@ -3,14 +3,14 @@ import React from 'react'
 function FooterContent() {
   return (
     <div className='bg-[#101827] py-8 px-4 md:py-12 md:px-14'>
-      <div className='max-w-6xl mx-auto text-center'>
+      <div className='max-w-6xl mx-auto text-left md:text-center'>
         {/* Name */}
         <h1 className='text-white text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playball mb-4 md:mb-6'>
           Cader <span className='text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl'>Rahmathulla</span>
         </h1>
         
         {/* Description */}
-        <p className='text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-8 md:mb-12 max-w-4xl mx-auto'>
+        <p className='font-poppins text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-8 md:mb-12 mx-0 md:mx-auto max-w-4xl'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         
@@ -20,7 +20,7 @@ function FooterContent() {
         </h2>
         
         {/* Links */}
-        <p className='text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
+        <p className='text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-poppins'>
           About | Leadership | Ventures | Investments | Media | Contact
         </p>
       </div>

@@ -1,14 +1,14 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import MobileviewLeadershipPage from './mobileview-leadership';
+"use client"
+import Image from "next/image"
+import MobileviewLeadershipPage from "./mobileview-leadership"
 
 const LeadershipPortfolio = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto py-12 px-4 sm:px-6 font-poppins">
-      <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">Leadership Portfolio</h1>
-        <p className="text-gray-600 text-lg leading-relaxed text-normal-responsive mx-auto">
+    <div className="w-full max-w-7xl mx-auto py-8 mb-28 px-4 sm:px-6 font-poppins">
+      {/* Updated header with left-alignment on mobile screens */}
+      <div className="text-left md:text-center mb-8 md:mb-16">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3 md:mb-6">Leadership Portfolio</h1>
+        <p className="text-gray-600 text-[20px] text-normal-responsive leading-relaxed md:mx-auto">
           A track record of executive leadership across diverse sectors, driving innovation and strategic growth.
         </p>
       </div>
@@ -21,12 +21,12 @@ const LeadershipPortfolio = () => {
           <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 z-0">
             <div className="h-full border-l-4 border-blue-600 border-dashed"></div>
           </div>
-          
+
           {/* Diamond at top */}
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
             <div className="w-6 h-6 rotate-45 bg-blue-600"></div>
           </div>
-          
+
           {/* Circle at bottom */}
           <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-10">
             <div className="w-6 h-6 rounded-full bg-[#03045E]"></div>
@@ -35,34 +35,22 @@ const LeadershipPortfolio = () => {
           {/* Left column - Logos */}
           <div className="w-1/3 pr-10">
             <div className="flex justify-end items-center h-24 mb-32">
-              <Image 
-                src="/images/lbcicon.png"
-                alt="London Business Consultancy"
-                width={247}
-                height={90}
-                className="object-contain"
-              />
+              <div className="w-[200px] h-[80px] relative">
+                <Image src="/images/lbcicon.png" alt="London Business Consultancy" fill className="object-contain" />
+              </div>
             </div>
             <div className="flex justify-end items-center h-24 mb-32">
-              <Image 
-                src="/images/Sitc.jpg"
-                alt="SITC Campus"
-                width={200}
-                height={90}
-                className="object-contain"
-              />
+              <div className="w-[200px] h-[900px] relative">
+                <Image src="/images/Sitc.jpg" alt="SITC Campus" fill className="object-contain" />
+              </div>
             </div>
             <div className="flex justify-end items-center h-24">
-              <Image 
-                src="/images/codezela.png"
-                alt="Codezela Technologies"
-                width={207}
-                height={120}
-                className="object-contain"
-              />
+              <div className="w-[207px] h-[900px] relative">
+                <Image src="/images/codezela.png" alt="Codezela Technologies" fill className="object-contain" />
+              </div>
             </div>
           </div>
-          
+
           {/* Middle column - Timeline nodes and horizontal lines */}
           <div className="w-1/3 relative">
             {/* First node and line */}
@@ -74,7 +62,7 @@ const LeadershipPortfolio = () => {
               {/* Right dot */}
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
             </div>
-            
+
             {/* Second node and line */}
             <div className="relative flex items-center h-24 mb-32">
               {/* Center node */}
@@ -84,7 +72,7 @@ const LeadershipPortfolio = () => {
               {/* Right dot */}
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
             </div>
-            
+
             {/* Third node and line */}
             <div className="relative flex items-center h-24">
               {/* Center node */}
@@ -95,7 +83,7 @@ const LeadershipPortfolio = () => {
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
             </div>
           </div>
-          
+
           {/* Right column - Text content */}
           <div className="w-1/3 pl-10">
             <div className="flex flex-col justify-center h-24 mb-32">
@@ -115,9 +103,9 @@ const LeadershipPortfolio = () => {
       </div>
 
       {/* Mobile View - Only visible on mobile */}
-    <MobileviewLeadershipPage/>
+      <MobileviewLeadershipPage />
     </div>
-  );
-};
+  )
+}
 
-export default LeadershipPortfolio;
+export default LeadershipPortfolio

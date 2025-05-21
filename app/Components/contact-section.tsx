@@ -54,21 +54,21 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="w-full py-12 bg-[#1a1f2e] text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <section className="w-full py-8 md:py-12 bg-[#1a1f2e] text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <div className="px-4 mx-auto max-w-6xl">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-normal mb-2">
+        <div className="text-left md:text-center mb-6 md:mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-2">
             Connect with <span style={{ fontFamily: "'Playball', cursive" }}>Cader</span>
           </h2>
-          <p className="text-base md:text-lg text-gray-300">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300">
             Connect for partnership opportunities, speaking engagements, or investment discussions.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+              <div className="space-y-1 md:space-y-2">
                 <label htmlFor="name" className="block text-sm font-medium">
                   Name
                 </label>
@@ -77,12 +77,12 @@ export default function ContactSection() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="bg-[#131722] border-none h-12 text-white"
+                  className="bg-[#131722] border-none h-10 md:h-12 text-white"
                   placeholder="Name"
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1 md:space-y-2">
                 <label htmlFor="email" className="block text-sm font-medium">
                   Email Address
                 </label>
@@ -92,12 +92,12 @@ export default function ContactSection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="bg-[#131722] border-none h-12 text-white"
+                  className="bg-[#131722] border-none h-10 md:h-12 text-white"
                   placeholder="Email Address"
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1 md:space-y-2">
                 <label htmlFor="message" className="block text-sm font-medium">
                   Message
                 </label>
@@ -106,7 +106,7 @@ export default function ContactSection() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
-                  className="bg-[#131722] border-none min-h-[120px] text-white"
+                  className="bg-[#131722] border-none min-h-[100px] md:min-h-[120px] text-white"
                   placeholder="Message"
                 />
               </div>
@@ -114,37 +114,37 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#03045E] hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white h-12 rounded transition-colors duration-200 font-medium"
+                className="w-full bg-[#03045E] hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white h-10 md:h-12 rounded transition-colors duration-200 font-medium"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
               {submitStatus === "success" && (
-                <div className="mt-4 p-3 bg-green-900/50 border border-green-700 rounded-md">
-                  <p className="text-green-400 text-sm font-medium">Message sent successfully!</p>
+                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-green-900/50 border border-green-700 rounded-md">
+                  <p className="text-green-400 text-xs md:text-sm font-medium">Message sent successfully!</p>
                   {responseDetails?.message && <p className="text-green-300 text-xs mt-1">{responseDetails.message}</p>}
                 </div>
               )}
 
               {submitStatus === "error" && (
-                <div className="mt-4 p-3 bg-red-900/50 border border-red-700 rounded-md">
-                  <p className="text-red-400 text-sm font-medium">Failed to send message. Please try again.</p>
+                <div className="mt-3 md:mt-4 p-2 md:p-3 bg-red-900/50 border border-red-700 rounded-md">
+                  <p className="text-red-400 text-xs md:text-sm font-medium">Failed to send message. Please try again.</p>
                   {responseDetails?.error && <p className="text-red-300 text-xs mt-1">{responseDetails.error}</p>}
                 </div>
               )}
             </form>
           </div>
 
-          <div className="bg-[#131722] p-8 rounded-lg">
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-2">Connect Directly</h3>
+          <div className="bg-[#131722] p-6 md:p-8 rounded-lg">
+            <div className="mb-6 md:mb-8">
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Connect Directly</h3>
               <p className="text-gray-400">Business Assistant</p>
               <p className="text-gray-400">assistant@caderrahmatulla.com</p>
             </div>
 
-            <div className="border-t border-gray-700 my-6"></div>
+            <div className="border-t border-gray-700 my-4 md:my-6"></div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4">Follow & Connect</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">Follow & Connect</h3>
               <div className="flex space-x-4">
                 <a href="#" className="text-white hover:text-blue-400 transition-colors">
                   <LinkedInIcon />
@@ -161,7 +161,7 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="border-t border-gray-700 mt-6"></div>
+            <div className="border-t border-gray-700 mt-4 md:mt-6"></div>
           </div>
         </div>
       </div>

@@ -1,11 +1,10 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
   .text-normal-responsive {
-    @apply xl:text-[23px] lg:text-[22px] md:text-[22px] sm:text-[22px] xs:text-[22px] 2xs:text-[22px];
+    @apply xl:text-[23px] lg:text-[22px] md:text-[20px] sm:text-[18px] xs:text-[18px] 2xs:text-[18px];
   }
 
   .text-heading-responsive {
@@ -151,5 +150,5 @@ body {
   top: 160px;
   right: 120px;
   bottom: 160px;
-  left: 120px;
+  left: 120px;
 }
