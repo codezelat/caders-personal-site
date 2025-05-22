@@ -1,15 +1,18 @@
-"use client"
-import Image from "next/image"
-import MobileviewLeadershipPage from "./mobileview-leadership"
+"use client";
+import Image from "next/image";
+import MobileviewLeadershipPage from "./mobileview-leadership";
 
 const LeadershipPortfolio = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto py-8 mb-28 px-4 sm:px-6 font-poppins">
+    <div className="w-full max-w-7xl mx-auto py-8 mb-28 px-4 sm:px-6 font-poppins 2xl:h-screen">
       {/* Updated header with left-alignment on mobile screens */}
       <div className="text-left md:text-center mb-8 md:mb-16">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3 md:mb-6">Leadership Portfolio</h1>
+        <h1 className="text-heading-responsive font-bold text-black mb-3 md:mb-6">
+          Leadership Portfolio
+        </h1>
         <p className="text-gray-600 text-[20px] text-normal-responsive leading-relaxed md:mx-auto">
-          A track record of executive leadership across diverse sectors, driving innovation and strategic growth.
+          A track record of executive leadership across diverse sectors, driving
+          innovation and strategic growth.
         </p>
       </div>
 
@@ -36,17 +39,32 @@ const LeadershipPortfolio = () => {
           <div className="w-1/3 pr-10">
             <div className="flex justify-end items-center h-24 mb-32">
               <div className="w-[200px] h-[80px] relative">
-                <Image src="/images/lbcicon.png" alt="London Business Consultancy" fill className="object-contain" />
+                <Image
+                  src="/images/lbcicon.png"
+                  alt="London Business Consultancy"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
             <div className="flex justify-end items-center h-24 mb-32">
               <div className="w-[200px] h-[900px] relative">
-                <Image src="/images/Sitc.jpg" alt="SITC Campus" fill className="object-contain" />
+                <Image
+                  src="/images/Sitc.jpg"
+                  alt="SITC Campus"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
             <div className="flex justify-end items-center h-24">
               <div className="w-[207px] h-[900px] relative">
-                <Image src="/images/codezela.png" alt="Codezela Technologies" fill className="object-contain" />
+                <Image
+                  src="/images/codezela.png"
+                  alt="Codezela Technologies"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
           </div>
@@ -87,16 +105,26 @@ const LeadershipPortfolio = () => {
           {/* Right column - Text content */}
           <div className="w-1/3 pl-10">
             <div className="flex flex-col justify-center h-24 mb-32">
-              <p className="text-gray-600 text-lg mb-1 ">Expanding Global Strategy</p>
-              <h3 className="text-[20px] font-bold">Executive Board Member – LBC UK</h3>
+              <p className="text-gray-600 text-lg mb-1 ">
+                Expanding Global Strategy
+              </p>
+              <h3 className="text-[20px] font-bold">
+                Executive Board Member – LBC UK
+              </h3>
             </div>
             <div className="flex flex-col justify-center h-24 mb-32">
-              <p className="text-gray-600 text-lg mb-1">Transforming Education</p>
+              <p className="text-gray-600 text-lg mb-1">
+                Transforming Education
+              </p>
               <h3 className="text-[20px] font-bold">CEO – SITC Campus</h3>
             </div>
             <div className="flex flex-col justify-center h-24">
-              <p className="text-gray-600 text-lg mb-1">Fueling Digital Innovation</p>
-              <h3 className="text-[20px] font-bold">COO – Codezela Technologies</h3>
+              <p className="text-gray-600 text-lg mb-1">
+                Fueling Digital Innovation
+              </p>
+              <h3 className="text-[20px] font-bold">
+                COO – Codezela Technologies
+              </h3>
             </div>
           </div>
         </div>
@@ -105,7 +133,7 @@ const LeadershipPortfolio = () => {
       {/* Mobile View - Only visible on mobile */}
       <MobileviewLeadershipPage />
     </div>
-  )
-}
+  );
+};
 
-export default LeadershipPortfolio
+export default LeadershipPortfolio;

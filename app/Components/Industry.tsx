@@ -18,14 +18,14 @@ const Industry: React.FC = () => {
 
       {/* Text content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 z-20">
-        <h1 className="text-poppins-bold text-text-heading-responsive text-[48px] font-bold  ">
+        <h1 className="text-poppins-bold text-heading-responsive text-[48px] font-bold sm:leading-nomal ">
           Investing in <br/> Visionaries Reshaping Industries
         </h1>
         <div className="gap-[40px] flex flex-col items-center justify-center mt-4">
-          <p className="text-[33px] md:text-2xl font-[500px] mb-4 max-w-xl">
+          <p className="text-normal-responsive  font-[500px] mb-4 max-w-xl">
           Focus on innovation-driven, scalable, and values-aligned opportunities.
         </p>
-        <p className="text-[23px] text-text-normal-responsive font-medium">
+        <p className="text-[23px] text-normal-responsive font-medium">
           Education | Technology | SaaS | Infrastructure.
         </p>
         </div>
