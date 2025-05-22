@@ -13,7 +13,8 @@ const Hero = () => {
   };
 
   return (
-    <div className="bg-[#efecff] mx-auto px-4 md:px-8 lg:px-32 flex flex-col-reverse lg:flex-row items-center justify-between pt-32 md:pt-40">
+    <div className="bg-[#efecff] 2xl:px-60 lg:px-28 md:px-10 sm:px-5 xs:px-5 2xs:px-5 mx-auto  flex flex-col-reverse lg:flex-row items-center justify-between pt-32 md:pt-40 2xl:h-screen">
+
       {/* Left Content */}
       <div className="w-full lg:w-3/5 py-8 lg:py-16">
         <div className="mb-6">

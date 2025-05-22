@@ -152,3 +152,7 @@ body {
   bottom: 160px;
   left: 120px;
 }
+
+html {
+  scroll-behavior: smooth;
+}

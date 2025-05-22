@@ -12,7 +12,7 @@ function MediaPage() {
       <div className="mx-auto py-8 px-4 sm:px-6 md:py-16 md:px-16 lg:px-32">
         {/* Header Section */}
         <div className="text-left md:text-center mb-8 md:mb-16">
-          <h1 className="text-heading-responsive sm:text-4xl md:text-5xl font-bold text-black mb-4 md:mb-6">
+          <h1 className="text-heading-responsive sm:leading-none font-bold text-black mb-4 md:mb-6">
             Media Features & Appearances
           </h1>
            <p className="text-gray-600 text-[20px] text-normal-responsive leading-relaxed md:mx-auto">
