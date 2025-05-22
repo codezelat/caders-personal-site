@@ -39,9 +39,9 @@ export default function Page() {
       </section>
 
       {/* Gallery (Optional) */}
-      {/* <section id="gallery">
+       <section id="gallery">
         <Gallery />
-      </section> */}
+      </section> 
 
       {/* Contact Section */}
       <section id="contact">
