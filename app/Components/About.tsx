@@ -33,7 +33,7 @@ const About: React.FC = () => {
   }, [galleryImages.length]);
 
   return (
-    <div className="pt-[100px] sm:pt-[60px] xs:pt-[40px] pb-[20px] bg-[#ffffff] xl:px-[120px] lg:px-[80px] md:px-[40px] px-[20px]">
+    <div className="pt-[100px] sm:pt-[60px] xs:pt-[40px] pb-[20px] bg-[#ffffff] xl:px-[120px] lg:px-[80px] md:px-[40px] px-[20px] 2xl:h-screen">
       <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col xs:flex-col 2xs:flex-col items-center justify-center gap-[40px]">
         <div>
           <div className="poppins-medium text-heading-responsive leading-[120%] sm:leading-none items-center pb-[40px]">

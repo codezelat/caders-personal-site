@@ -8,7 +8,7 @@ function MediaPage() {
   };
   
   return (
-    <div className='bg-white flex flex-col font-poppins'>
+    <div className='bg-white flex flex-col font-poppins 2xl:h-screen'>
       <div className="mx-auto py-8 px-4 sm:px-6 md:py-16 md:px-16 lg:px-32">
         {/* Header Section */}
         <div className="text-left md:text-center mb-8 md:mb-16">

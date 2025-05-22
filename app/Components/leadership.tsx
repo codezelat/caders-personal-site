@@ -4,7 +4,7 @@ import MobileviewLeadershipPage from "./mobileview-leadership";
 
 const LeadershipPortfolio = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto py-8 mb-28 px-4 sm:px-6 font-poppins">
+    <div className="w-full max-w-7xl mx-auto py-8 mb-28 px-4 sm:px-6 font-poppins 2xl:h-screen">
       {/* Updated header with left-alignment on mobile screens */}
       <div className="text-left md:text-center mb-8 md:mb-16">
         <h1 className="text-heading-responsive font-bold text-black mb-3 md:mb-6">

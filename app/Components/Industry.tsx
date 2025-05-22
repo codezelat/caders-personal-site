@@ -22,7 +22,7 @@ const Industry: React.FC = () => {
           Investing in <br/> Visionaries Reshaping Industries
         </h1>
         <div className="gap-[40px] flex flex-col items-center justify-center mt-4">
-          <p className="text-[33px] md:text-2xl sm:text-2xl  font-[500px] mb-4 max-w-xl">
+          <p className="text-normal-responsive  font-[500px] mb-4 max-w-xl">
           Focus on innovation-driven, scalable, and values-aligned opportunities.
         </p>
         <p className="text-[23px] text-normal-responsive font-medium">
