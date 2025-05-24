@@ -27,7 +27,7 @@ function FooterContent() {
           Cader Rahmathulla is a Sri Lankan entrepreneur and education leader,
           currently serving as the CEO of SITC Campus and COO of Codezela
           Technologies. He has been recognised as the Best Upcoming Young
-          Entrepreneur of the Year at the People's Excellency Awards 2024
+          Entrepreneur of the Year at the People&apos;s Excellency Awards 2024
         </p>
 
         {/* Quick Links Title */}
