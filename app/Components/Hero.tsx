@@ -1,18 +1,17 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Button from './ui/Button';
-import React from 'react';
-import { heroData } from '../data/herodata';
+import Image from "next/image";
+import Button from "./ui/Button";
+import React from "react";
+import { heroData } from "../data/herodata";
 
 const Hero = () => {
   const handleExploreClick = () => {
-    console.log('Explore My Ventures clicked');
+    console.log("Explore My Ventures clicked");
   };
 
   return (
     <div className="relative bg-[#efecff] 2xl:px-60 lg:px-28 md:px-10 sm:px-5 px-5 flex flex-col-reverse lg:flex-row items-center justify-between pt-32 md:pt-40 lg:h-screen overflow-hidden">
-
       {/* Left Content */}
       <div className="w-full lg:w-3/5  py-8 lg:py-16 z-10">
         <div className="mb-6">
@@ -39,13 +38,11 @@ const Hero = () => {
           ))}
         </div>
 
-        <Button onClick={handleExploreClick}>
-          {heroData.ctaText}
-        </Button>
+        <Button onClick={handleExploreClick}>{heroData.ctaText}</Button>
       </div>
 
       {/* Right Image */}
-      <div className="hidden lg:block absolute top-0 right-0 h-full w-2/5">
+      <div className="hidden lg:block absolute top-0 right-0 h-full w-1/2">
         <Image
           src={heroData.imageSrc}
           alt={heroData.imageAlt}

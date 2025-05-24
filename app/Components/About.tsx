@@ -8,9 +8,9 @@ const About: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const stats = [
-    { number: "15+", text: "Active Leadership Roles" },
-    { number: "4", text: "Countries" },
-    { number: "12", text: "Ventures" },
+    { number: "10+", text: "Active Leadership Roles" },
+    { number: "4+", text: "Countries" },
+    { number: "15+", text: "Ventures" },
   ];
 
   const galleryImages = [
@@ -42,14 +42,14 @@ const About: React.FC = () => {
               Cader
             </span>
           </div>
-          <p className="w-auto text-normal-responsive xl:w-[628px] lg:w-[400px] h-auto poppins-light text-[23px] text-text-normal-responsive leading-relaxed items-start">
+          <p className="w-auto text-md xl:w-[628px] lg:w-[400px] h-auto poppins-light text-md leading-relaxed items-start">
             As a multi-sector leader spanning education, technology, and
             corporate strategy, I focus on building visionary organizations that
             create lasting impact. My approach combines innovative thinking with
             practical execution, ensuring sustainable growth and meaningful
             outcomes.
             <br className="h-[24px]" />{" "}
-            <span className="block mt-6 text-normal-responsive">
+            <span className="block mt-6 text-md">
               Throughout my career, I&apos;ve prioritized three core values:
               visionary leadership that anticipates future trends, strategic
               expansion that creates opportunities, and legacy-building that
@@ -85,7 +85,7 @@ const About: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="w-[470px]  xl:w-[370px] lg:w-[280px] md:w-[220px] sm:w-[370px] xs:w-[320px] 2xs:w-[270px]  h-[136px] rounded-[24px] border-[4px] border-[#03045E] p-[32px] flex flex-col justify-center items-center"
+              className="w-[470px]  xl:w-[370px] lg:w-[280px] md:w-[220px] sm:w-[370px] xs:w-[320px] 2xs:w-[270px]  h-[136px] rounded-[24px] border-[4px] border-[#03045E] p-[32px] flex flex-col justify-center text-center items-center"
             >
               <div className="poppins-bold text-[40px] xl:text-[40px] lg:text-[40px] md:text-[36px] sm:text-[30px] xs:text-[30px] 2xs:text-[30px] leading-[120%] text-[#03045E] items-center">
                 {stat.number}

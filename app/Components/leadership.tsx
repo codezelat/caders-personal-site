@@ -10,7 +10,7 @@ const LeadershipPortfolio = () => {
         <h1 className="text-heading-responsive font-bold text-black mb-3 md:mb-6">
           Leadership Portfolio
         </h1>
-        <p className="text-gray-600 text-[20px] text-normal-responsive leading-relaxed md:mx-auto">
+        <p className="text-gray-600 text-[20px] text-md leading-relaxed md:mx-auto">
           A track record of executive leadership across diverse sectors, driving
           innovation and strategic growth.
         </p>

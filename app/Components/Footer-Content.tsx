@@ -23,8 +23,11 @@ function FooterContent() {
         </h1>
 
         {/* Description */}
-        <p className="font-poppins text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-8 md:mb-12 mx-0 md:mx-auto max-w-4xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <p className="font-poppins text-white text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed mb-8 md:mb-12 mx-0 md:mx-auto max-w-4xl">
+          Cader Rahmathulla is a Sri Lankan entrepreneur and education leader,
+          currently serving as the CEO of SITC Campus and COO of Codezela
+          Technologies. He has been recognised as the Best Upcoming Young
+          Entrepreneur of the Year at the People's Excellency Awards 2024
         </p>
 
         {/* Quick Links Title */}
@@ -33,9 +36,14 @@ function FooterContent() {
         </h2>
 
         {/* Links */}
-        <div className="flex flex-wrap justify-start md:justify-center gap-x-4 gap-y-2 text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-poppins">
+        <div className="flex flex-wrap justify-start md:justify-center gap-x-4 gap-y-2 text-white text-xs xs:text-sm sm:text-base md:text-md font-poppins">
           {links.map((link) => (
-            <Link key={link.name} href={link.href} scroll={true} className="hover:underline">
+            <Link
+              key={link.name}
+              href={link.href}
+              scroll={true}
+              className="hover:underline"
+            >
               {link.name}
             </Link>
           ))}
