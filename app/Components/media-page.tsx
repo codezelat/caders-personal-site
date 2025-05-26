@@ -25,7 +25,7 @@ function MediaPage() {
         {/* Media Cards */}
         <div className="w-full space-y-16 max-w-[1236px] mx-auto flex flex-col items-start justify-start">
           {/* Science Card */}
-          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[205px]">
+          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[250px]">
             {/* Mobile: Text first, Desktop: Image first */}
             <div className="flex-1 text-left flex flex-col items-start md:order-2">
               <h2 className="text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-black mb-1 md:mb-2">
@@ -54,7 +54,7 @@ function MediaPage() {
           </div>
 
           {/* Daily Card */}
-          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[205px]">
+          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[250px]">
             {/* Mobile: Text first, Desktop: Image first */}
             <div className="flex-1 text-left flex flex-col items-start md:order-2">
               <h2 className="text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-black mb-1 md:mb-2">
@@ -83,7 +83,7 @@ function MediaPage() {
           </div>
 
           {/* TechTV Card */}
-          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[205px]">
+          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[250px]">
             {/* Mobile: Text first, Desktop: Image first */}
             <div className="flex-1 text-left flex flex-col items-start md:order-2">
               <h2 className="text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-black mb-1 md:mb-2">
