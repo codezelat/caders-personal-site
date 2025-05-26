@@ -67,7 +67,7 @@ export default function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 mr-6 md:mr-8">
               <div className="space-y-1 md:space-y-2">
                 <label htmlFor="name" className="block text-sm font-medium">
                   Name
@@ -114,7 +114,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#03045E] hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white h-10 md:h-12 rounded transition-colors duration-200 font-medium"
+                className="w-full bg-[#03045E] hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white h-10 md:h-12 rounded-[10px] transition-colors duration-200 font-medium"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
@@ -134,7 +134,7 @@ export default function ContactSection() {
             </form>
           </div>
 
-          <div className="bg-[#131722] p-6 md:p-8 rounded-lg">
+          <div className="bg-[#131722] p-4 md:p-6 rounded-lg">
             <div className="mb-6 md:mb-8">
               <h3 className="text-lg md:text-xl font-semibold mb-2">Connect Directly</h3>
               <p className="text-gray-400">Business Assistant</p>

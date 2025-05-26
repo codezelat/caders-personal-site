@@ -4,6 +4,33 @@ import { useState, useEffect, useRef, type TouchEvent } from "react"
 import Image from "next/image"
 
 const Gallery = () => {
+  // Add this style tag at the beginning of your component
+  useEffect(() => {
+    const style = document.createElement("style")
+    style.textContent = `
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-2180px);
+        }
+      }
+      
+      .animate-slide {
+        animation: slide 20s linear infinite;
+      }
+      
+      .animate-slide:hover {
+        animation-play-state: paused;
+      }
+    `
+    document.head.appendChild(style)
+
+    return () => {
+      document.head.removeChild(style)
+    }
+  }, [])
   // Images array for the mobile slider
   const galleryImages = [
     "/images/gallery1.jpg",
@@ -18,10 +45,8 @@ const Gallery = () => {
     "/images/gallery5.jpg",
   ]
 
- 
   const [currentSlide, setCurrentSlide] = useState(0)
 
- 
   const touchStartX = useRef(0)
   const touchEndX = useRef(0)
 
@@ -33,7 +58,6 @@ const Gallery = () => {
 
     return () => clearInterval(interval)
   }, [galleryImages.length])
-
 
   const handleTouchStart = (e: TouchEvent) => {
     touchStartX.current = e.touches[0].clientX
@@ -53,17 +77,14 @@ const Gallery = () => {
     if (Math.abs(distance) < minSwipeDistance) return
 
     if (distance > 0) {
-     
       setCurrentSlide((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1))
     } else {
-   
       setCurrentSlide((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1))
     }
   }
 
   // Function to get the appropriate dot index for the limited dots display
   const getDotIndex = (index: number) => {
-  
     return Math.floor((index * 5) / galleryImages.length)
   }
 
@@ -106,121 +127,231 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Original Desktop Gallery - Hidden on mobile */}
-      <div
-        className="hidden md:block relative w-full xl:w-[]  overflow-hidden bg-white py-16 mb-20"
-        style={{
-          width: "2180px",
-          height: "671px",
-          marginLeft: "-226px",
-        }}
-      >
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-6 gap-5 " style={{ height: "671px" }}>
-          {/* Column 1 - Two stacked images */}
-          <div className="flex flex-col space-y-5">
-            <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
-              <Image
-                width={317}
-                height={325}
-                src="/images/gallery1.jpg"
-                alt="Gallery image"
-                className="w-full h-full object-cover"
-                priority
-              />
+      {/* Desktop/Tablet Sliding Gallery - Hidden on mobile */}
+      <div className="hidden md:block relative w-full overflow-hidden bg-white py-16 mb-20">
+        <div
+          className="flex gap-5 animate-slide"
+          style={{
+            width: "calc(4360px)", 
+            height: "671px",
+          }}
+        >
+          {/* First set of images */}
+          <div className="flex gap-5 min-w-[2180px]">
+            {/* Column 1 - Two stacked images */}
+            <div className="flex flex-col space-y-5 min-w-[317px]">
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery1.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery2.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
-            <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
-              <Image
-                width={317}
-                height={325}
-                src="/images/gallery2.jpg"
-                alt="Gallery image"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
 
-          {/* Column 2 - Single tall image */}
-          <div className="rounded-3xl overflow-hidden" style={{ height: "671px" }}>
-            <Image
-              width={408}
-              height={671}
-              src="/images/gallery3.jpg"
-              alt="Gallery image"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Column 3-4 - Four images in a grid (spanning 2 columns) */}
-          <div className="col-span-2 grid grid-cols-2 gap-5">
-            <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+            {/* Column 2 - Single tall image */}
+            <div className="rounded-3xl overflow-hidden min-w-[408px]" style={{ height: "671px" }}>
               <Image
-                width={317}
-                height={325}
-                src="/images/gallery4.jpg"
-                alt="Gallery image"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
-              <Image
-                width={317}
-                height={325}
+                width={408}
+                height={671}
                 src="/images/gallery3.jpg"
                 alt="Gallery image"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+
+            {/* Column 3-4 - Four images in a grid */}
+            <div className="grid grid-cols-2 gap-5 min-w-[654px]">
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery4.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery3.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery5.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery4.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Column 5 - Single tall image */}
+            <div className="rounded-3xl overflow-hidden min-w-[408px]" style={{ height: "671px" }}>
               <Image
-                width={317}
-                height={325}
-                src="/images/gallery5.jpg"
+                width={408}
+                height={671}
+                src="/images/gallery2.jpg"
                 alt="Gallery image"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
-              <Image
-                width={317}
-                height={325}
-                src="/images/gallery4.jpg"
-                alt="Gallery image"
-                className="w-full h-full object-cover"
-              />
+
+            {/* Column 6 - Two stacked images */}
+            <div className="flex flex-col space-y-5 min-w-[317px]">
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery5.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery1.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Column 5 - Single tall image */}
-          <div className="rounded-3xl overflow-hidden" style={{ height: "671px" }}>
-            <Image
-              width={408}
-              height={671}
-              src="/images/gallery2.jpg"
-              alt="Gallery image"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {/* Duplicate set for seamless loop */}
+          <div className="flex gap-5 min-w-[2180px]">
+            {/* Column 1 - Two stacked images */}
+            <div className="flex flex-col space-y-5 min-w-[317px]">
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery1.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery2.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
 
-          {/* Column 6 - Two stacked images */}
-          <div className="flex flex-col space-y-5">
-            <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+            {/* Column 2 - Single tall image */}
+            <div className="rounded-3xl overflow-hidden min-w-[408px]" style={{ height: "671px" }}>
               <Image
-                width={317}
-                height={325}
-                src="/images/gallery5.jpg"
+                width={408}
+                height={671}
+                src="/images/gallery3.jpg"
                 alt="Gallery image"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+
+            {/* Column 3-4 - Four images in a grid */}
+            <div className="grid grid-cols-2 gap-5 min-w-[654px]">
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery4.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery3.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery5.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery4.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Column 5 - Single tall image */}
+            <div className="rounded-3xl overflow-hidden min-w-[408px]" style={{ height: "671px" }}>
               <Image
-                width={317}
-                height={325}
-                src="/images/gallery1.jpg"
+                width={408}
+                height={671}
+                src="/images/gallery2.jpg"
                 alt="Gallery image"
                 className="w-full h-full object-cover"
               />
+            </div>
+
+            {/* Column 6 - Two stacked images */}
+            <div className="flex flex-col space-y-5 min-w-[317px]">
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery5.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="rounded-3xl overflow-hidden" style={{ height: "325px" }}>
+                <Image
+                  width={317}
+                  height={325}
+                  src="/images/gallery1.jpg"
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -30,9 +30,9 @@ const Header: React.FC = () => {
   return (
     <>
       <header
-        className="fixed top-[33px] left-1/2 transform -translate-x-1/2 w-full 
-        max-w-[95%] 2xl:max-w-[1400px] px-4 py-4 z-50 bg-white/80 backdrop-blur-lg 
-        shadow-md rounded-[16px] flex justify-between items-center"
+className="fixed top-[33px] left-1/2 transform -translate-x-1/2 w-full 
+max-w-[95%] 2xl:max-w-[1400px] px-4 py-4 z-50 bg-white/80 backdrop-blur-lg 
+shadow-md rounded-[16px] flex justify-between items-center"
       >
         {/* Logo */}
         <div className="text-2xl font-bold">
@@ -128,3 +128,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+

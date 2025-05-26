@@ -13,7 +13,7 @@ import Gallery from "./Components/Gallery";
 export default function Page() {
   return (
     <div className="bg-[#FFFFFF66] backdrop-blur-[8px] min-h-screen scroll-smooth">
-      <Header />
+      <Header/>
 
       {/* Hero section does not need an ID unless linked */}
       <Hero />
