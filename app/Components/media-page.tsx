@@ -8,10 +8,10 @@ function MediaPage() {
 
   return (
     <div className="bg-white flex flex-col font-poppins">
-      <div className="mx-auto py-8 px-4 sm:px-6 md:py-16 md:px-16 lg:px-32">
+      <div className="mx-auto py-8 px-4 md:py-16 md:px-16 sm:px-10 lg:px-32">
         {/* Header Section */}
-        <div className="text-left md:text-center mb-16 md:mb-16">
-          <h1 className="text-heading-responsive sm:text-4xl md:text-5xl font-bold text-black mb-10 md:mb-6">
+        <div className="text-left md:text-center mb-16 md:mb-16 sm:mb-10">
+          <h1 className="text-heading-responsive sm:text-4xl md:text-5xl font-bold text-black mb-20  md:mb-10 sm:mb-10">
             Media Features & Appearances
           </h1>
           <p className="text-gray-600 text-md leading-relaxed md:mx-auto">
@@ -20,12 +20,12 @@ function MediaPage() {
             various global platforms, fostering a community of forward-thinking
             professionals.
           </p>
+                  
         </div>
-
         {/* Media Cards */}
         <div className="w-full space-y-16 max-w-[1236px] mx-auto flex flex-col items-start justify-start">
           {/* Science Card */}
-          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[250px]">
+          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[305px] ">
             {/* Mobile: Text first, Desktop: Image first */}
             <div className="flex-1 text-left flex flex-col items-start md:order-2">
               <h2 className="text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-black mb-1 md:mb-2">
@@ -54,7 +54,7 @@ function MediaPage() {
           </div>
 
           {/* Daily Card */}
-          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[250px]">
+          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[305px] ">
             {/* Mobile: Text first, Desktop: Image first */}
             <div className="flex-1 text-left flex flex-col items-start md:order-2">
               <h2 className="text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-black mb-1 md:mb-2">
@@ -83,7 +83,7 @@ function MediaPage() {
           </div>
 
           {/* TechTV Card */}
-          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[250px]">
+          <div className="bg-[#F4F4F4] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 w-full h-[305px] ">
             {/* Mobile: Text first, Desktop: Image first */}
             <div className="flex-1 text-left flex flex-col items-start md:order-2">
               <h2 className="text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-black mb-1 md:mb-2">

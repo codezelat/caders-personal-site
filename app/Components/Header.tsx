@@ -7,14 +7,9 @@ import Button from "./ui/Button";
 
 const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState<string>("");
 
-  const navItems = [
-    "About",
-    "Leadership",
-    "Ventures",
-    "Investments",
-    "Media",
-  ];
+  const navItems = ["About", "Leadership", "Ventures", "Investments", "Media"];
 
   useEffect(() => {
     if (isSidebarOpen) {
@@ -26,90 +21,109 @@ const Header: React.FC = () => {
       document.body.classList.remove("overflow-hidden");
     };
   }, [isSidebarOpen]);
+  function handleClick(item: string): void {
+    setActiveItem(item);
+    setIsSidebarOpen(false);
+  }
 
   return (
     <>
-      <header
-className="fixed top-[33px] left-1/2 transform -translate-x-1/2 w-full 
-max-w-[95%] 2xl:max-w-[1400px] px-4 py-4 z-50 bg-white/80 backdrop-blur-lg 
-shadow-md rounded-[16px] flex justify-between items-center"
-      >
-        {/* Logo */}
-        <div className="text-2xl font-bold">
-          <Link href="/">
-            <div className="playball-regular text-[32px] text-[#03045E]">
-              Cader <span className="text-[20px] text-black">Rahmathulla</span>
-            </div>
-          </Link>
+      <header className="fixed top-[16px] left-0 w-full px-4 py-5 pr-[120px] z-50 bg-transparent shadow-none flex justify-end">
+        <div className="w-fit lg:w-full max-w-[95%] 2xl:max-w-[1400px] bg-white/70 backdrop-blur-sm rounded-[16px] px-4 py-3 shadow-md flex justify-between items-center">
+          {/* Logo - Hidden on mobile, visible on lg and above */}
+          <div className="text-2xl font-bold hidden lg:block">
+            <Link href="/">
+              <div className="playball-regular text-[32px] text-[#03045E]">
+                Cader{" "}
+                <span className="text-[20px] text-black">Rahmathulla</span>
+              </div>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex gap-4 items-center">
+            <ul className="flex gap-[10px] items-center">
+              {navItems.map((item) => (
+                <li key={item}>
+                  <Link
+                    href={`#${item.toLowerCase()}`}
+                    className="poppins-medium text-base hover:text-[#03045E] transition-colors px-[16px] py-[8px] rounded-[8px]"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link href="#contact">
+              <Button>Contact With Cader</Button>
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden text-[#03045E]"
+            onClick={() => setIsSidebarOpen(true)}
+            aria-label="Open menu"
+          >
+            <MenuIcon fontSize="large" />
+          </button>
         </div>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex gap-4 items-center">
-          <ul className="flex gap-[10px] items-center">
-            {navItems.map((item) => (
-              <li key={item}>
-                <Link
-                  href={`#${item.toLowerCase()}`}
-                  className="poppins-medium text-base hover:text-[#03045E] transition-colors px-[16px] py-[8px] rounded-[8px]"
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Link href="#contact">
-            <Button>Contact With Cader</Button>
-          </Link>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="xl:hidden text-[#03045E]"
-          onClick={() => setIsSidebarOpen(true)}
-          aria-label="Open menu"
-        >
-          <MenuIcon fontSize="large" />
-        </button>
       </header>
 
       {/* Sidebar and Overlay */}
       {isSidebarOpen && (
         <>
           <div
-            className="fixed inset-0 bg-black bg-opacity-40 z-40 xl:hidden"
+            className="fixed inset-0 bg-black bg-opacity-40 z-40 lg:hidden"
             onClick={() => setIsSidebarOpen(false)}
           />
 
           <div
-            className={`fixed top-0 right-0 w-full h-screen bg-white shadow-lg z-50 transform transition-transform duration-300 xl:hidden ${
+            className={`fixed top-0 right-0 w-full h-screen bg-white shadow-lg z-50 transform transition-transform duration-300 lg:hidden ${
               isSidebarOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
             <div className="flex flex-col justify-between h-full">
-              <div className="flex items-center justify-between px-4 py-4 border-b">
-                <span className="text-xl font-semibold text-[#03045E]">Menu</span>
-                <button onClick={() => setIsSidebarOpen(false)} aria-label="Close menu">
+              <div className="flex items-center justify-between px-4 py-4 ">
+                {/* <span className="text-xl font-semibold text-[#03045E]">
+                  Menu
+                </span> */}
+                <button
+                  onClick={() => setIsSidebarOpen(false)}
+                  aria-label="Close menu"
+                >
                   <CloseIcon />
                 </button>
               </div>
 
-              <ul className="flex flex-col items-center p-4 gap-4">
+              <ul className="flex flex-col items-center p-4 gap-5 w-full">
                 {navItems.map((item) => (
-                  <li key={item}>
+                  <li key={item} className="w-full">
                     <Link
                       href={`#${item.toLowerCase()}`}
-                      onClick={() => setIsSidebarOpen(false)}
-                      className="text-base text-[#03045E] hover:underline"
+                      onClick={() => handleClick(item)}
+                      className={`block text-lg font-bold text-center p-2 rounded-[8px] transition-colors w-full
+          ${
+            activeItem === item
+              ? "bg-gray-200 text-[#03045E]" // <-- ACTIVE: new text color
+              : "text-[#03055ea5] hover:underline"
+          }`}
                     >
                       {item}
                     </Link>
+                    <hr className="border-t border-gray-300 w-3/4 mx-auto" />
                   </li>
                 ))}
-                <li>
+
+                <li className="w-full">
                   <Link
                     href="#contact"
-                    onClick={() => setIsSidebarOpen(false)}
-                    className="text-base text-[#03045E] hover:underline"
+                    onClick={() => handleClick("Contact")}
+                    className={`block text-lg font-bold text-center p-2 bg-[#03045E] text-[#03045E] rounded-[8px] transition-colors w-full ${
+                      activeItem === "Contact"
+                        ? "bg-gray-200 text-[#03045E]"
+                        : "text-[#ffffff] hover:underline"
+                    }`}
                   >
                     Contact With Cader
                   </Link>
@@ -128,4 +142,3 @@ shadow-md rounded-[16px] flex justify-between items-center"
 };
 
 export default Header;
-

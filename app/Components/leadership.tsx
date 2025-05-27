@@ -4,7 +4,7 @@ import MobileviewLeadershipPage from "./mobileview-leadership";
 
 const LeadershipPortfolio = () => {
   return (
-    <div className="font-poppins w-full max-w-7xl mx-auto py-8 mb-28 px-4 sm:px-6 2xl:h-screen">
+    <div className="w-full max-w-7xl mx-auto py-8 sm:pt-[40px] mb-28 px-4 sm:px-10 font-poppins 2xl:h-screen">
       {/* Updated header with left-alignment on mobile screens */}
       <div className="text-left md:text-center mb-8 md:mb-16">
         <h1 className="text-heading-responsive font-bold text-black mb-6 md:mb-10">
@@ -38,7 +38,7 @@ const LeadershipPortfolio = () => {
           {/* Left column - Logos */}
           <div className="w-1/3 pr-10">
             <div className="flex justify-end items-center h-24 mb-32">
-              <div className="w-[200px] h-[80px] relative">
+              <div className="w-[200px] h-[60px] sm:h-[80px] relative">
                 <Image
                   src="/images/lbcicon.png"
                   alt="London Business Consultancy"
@@ -48,7 +48,7 @@ const LeadershipPortfolio = () => {
               </div>
             </div>
             <div className="flex justify-end items-center h-24 mb-32">
-              <div className="w-[200px] h-[900px] relative">
+              <div className="w-[200px] h-[70px] sm:h-[50px] relative">
                 <Image
                   src="/images/Sitc.jpg"
                   alt="SITC Campus"
@@ -58,7 +58,7 @@ const LeadershipPortfolio = () => {
               </div>
             </div>
             <div className="flex justify-end items-center h-24">
-              <div className="w-[207px] h-[900px] relative">
+              <div className="w-[207px] h-[90px] sm:h-[120px] relative">
                 <Image
                   src="/images/codezela.png"
                   alt="Codezela Technologies"

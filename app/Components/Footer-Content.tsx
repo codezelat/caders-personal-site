@@ -12,7 +12,7 @@ function FooterContent() {
   ];
 
   return (
-    <div className="bg-[#101827] py-8 px-4 md:py-12 md:px-14">
+    <div className="bg-[#101827] py-8 px-4 sm:px-10 md:py-12 md:px-14">
       <div className="max-w-6xl mx-auto text-left md:text-center">
         {/* Name */}
         <h1 className="text-white text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playball mb-4 md:mb-6">

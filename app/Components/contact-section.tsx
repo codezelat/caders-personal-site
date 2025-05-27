@@ -1,28 +1,31 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import XIcon from '@mui/icons-material/X';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import { Input } from "./ui/input"
-import { Textarea } from "./ui/textarea"
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import type React from "react";
+import { useState } from "react";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import XIcon from "@mui/icons-material/X";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 
 export default function ContactSection() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
   type ResponseDetails = { message?: string; error?: string };
-  const [responseDetails, setResponseDetails] = useState<ResponseDetails | null>(null)
+  const [responseDetails, setResponseDetails] =
+    useState<ResponseDetails | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
-    setResponseDetails(null)
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setResponseDetails(null);
 
     try {
       const response = await fetch("/api/contact", {
@@ -31,43 +34,54 @@ export default function ContactSection() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ name, email, message }),
-      })
+      });
 
-      const data = await response.json()
+      const data = await response.json();
 
       if (response.ok) {
-        setSubmitStatus("success")
-        setResponseDetails(data)
-        setName("")
-        setEmail("")
-        setMessage("")
+        setSubmitStatus("success");
+        setResponseDetails(data);
+        setName("");
+        setEmail("");
+        setMessage("");
       } else {
-        setSubmitStatus("error")
-        setResponseDetails(data)
+        setSubmitStatus("error");
+        setResponseDetails(data);
       }
     } catch (error) {
-      setSubmitStatus("error")
-      setResponseDetails({ error: error instanceof Error ? error.message : "Unknown error occurred" })
+      setSubmitStatus("error");
+      setResponseDetails({
+        error:
+          error instanceof Error ? error.message : "Unknown error occurred",
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
-    <section className="w-full py-8 md:py-12 bg-[#1a1f2e] text-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
-      <div className="px-4 mx-auto max-w-6xl">
+    <section
+      className="w-full py-8 md:py-12 bg-[#1a1f2e] text-white"
+      style={{ fontFamily: "'Poppins', sans-serif" }}
+    >
+      <div className="px-4 sm:px-10 mx-auto max-w-6xl">
         <div className="text-left md:text-center mb-6 md:mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-2">
-            Connect with <span style={{ fontFamily: "'Playball', cursive" }}>Cader</span>
+            Connect with{" "}
+            <span style={{ fontFamily: "'Playball', cursive" }}>Cader</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-300">
-            Connect for partnership opportunities, speaking engagements, or investment discussions.
+            Connect for partnership opportunities, speaking engagements, or
+            investment discussions.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 mr-6 md:mr-8">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 md:space-y-6 mr-1 md:mr-8"
+            >
               <div className="space-y-1 md:space-y-2">
                 <label htmlFor="name" className="block text-sm font-medium">
                   Name
@@ -120,15 +134,27 @@ export default function ContactSection() {
               </button>
               {submitStatus === "success" && (
                 <div className="mt-3 md:mt-4 p-2 md:p-3 bg-green-900/50 border border-green-700 rounded-md">
-                  <p className="text-green-400 text-xs md:text-sm font-medium">Message sent successfully!</p>
-                  {responseDetails?.message && <p className="text-green-300 text-xs mt-1">{responseDetails.message}</p>}
+                  <p className="text-green-400 text-xs md:text-sm font-medium">
+                    Message sent successfully!
+                  </p>
+                  {responseDetails?.message && (
+                    <p className="text-green-300 text-xs mt-1">
+                      {responseDetails.message}
+                    </p>
+                  )}
                 </div>
               )}
 
               {submitStatus === "error" && (
                 <div className="mt-3 md:mt-4 p-2 md:p-3 bg-red-900/50 border border-red-700 rounded-md">
-                  <p className="text-red-400 text-xs md:text-sm font-medium">Failed to send message. Please try again.</p>
-                  {responseDetails?.error && <p className="text-red-300 text-xs mt-1">{responseDetails.error}</p>}
+                  <p className="text-red-400 text-xs md:text-sm font-medium">
+                    Failed to send message. Please try again.
+                  </p>
+                  {responseDetails?.error && (
+                    <p className="text-red-300 text-xs mt-1">
+                      {responseDetails.error}
+                    </p>
+                  )}
                 </div>
               )}
             </form>
@@ -136,7 +162,9 @@ export default function ContactSection() {
 
           <div className="bg-[#131722] p-4 md:p-6 rounded-lg">
             <div className="mb-6 md:mb-8">
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Connect Directly</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-2">
+                Connect Directly
+              </h3>
               <p className="text-gray-400">Business Assistant</p>
               <p className="text-gray-400">assistant@caderrahmatulla.com</p>
             </div>
@@ -144,18 +172,32 @@ export default function ContactSection() {
             <div className="border-t border-gray-700 my-4 md:my-6"></div>
 
             <div>
-              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">Follow & Connect</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+                Follow & Connect
+              </h3>
               <div className="flex space-x-4">
-                <a href="#" className="text-white hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-white hover:text-blue-400 transition-colors"
+                >
                   <LinkedInIcon />
                 </a>
-                <a href="#" className="text-white hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-white hover:text-blue-400 transition-colors"
+                >
                   <XIcon />
                 </a>
-                <a href="#" className="text-white hover:text-blue-400 transition-colors">
-                  <InstagramIcon/>
+                <a
+                  href="#"
+                  className="text-white hover:text-blue-400 transition-colors"
+                >
+                  <InstagramIcon />
                 </a>
-                <a href="#" className="text-white hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-white hover:text-blue-400 transition-colors"
+                >
                   <FacebookRoundedIcon />
                 </a>
               </div>
@@ -166,5 +208,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
