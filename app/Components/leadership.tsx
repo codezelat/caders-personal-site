@@ -4,13 +4,13 @@ import MobileviewLeadershipPage from "./mobileview-leadership";
 
 const LeadershipPortfolio = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto py-8 mb-28 px-4 sm:px-6 font-poppins 2xl:h-screen">
+    <div className="font-poppins w-full max-w-7xl mx-auto py-8 mb-28 px-4 sm:px-6 2xl:h-screen">
       {/* Updated header with left-alignment on mobile screens */}
       <div className="text-left md:text-center mb-8 md:mb-16">
-        <h1 className="text-heading-responsive font-bold text-black mb-3 md:mb-6">
+        <h1 className="text-heading-responsive font-bold text-black mb-6 md:mb-10">
           Leadership Portfolio
         </h1>
-        <p className="text-gray-600 text-[20px] text-md leading-relaxed md:mx-auto">
+        <p className="text-gray-600  text-md leading-relaxed md:mx-auto pb-10 ">
           A track record of executive leadership across diverse sectors, driving
           innovation and strategic growth.
         </p>
