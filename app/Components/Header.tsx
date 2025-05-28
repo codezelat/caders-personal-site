@@ -28,7 +28,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-[16px] left-0 w-full px-4 py-5  z-50 bg-transparent shadow-none flex justify-end">
+      <header className="fixed top-[16px] left-0 w-full px-4 py-5 z-50 bg-transparent shadow-none flex justify-end -mt-4 xl:pr-[120px]">
         <div className="w-fit lg:w-full max-w-[95%] 2xl:max-w-[1400px] bg-white/70 backdrop-blur-sm rounded-[16px] px-4 py-3 shadow-md flex justify-between items-center">
           {/* Logo - Hidden on mobile, visible on lg and above */}
           <div className="text-2xl font-bold hidden lg:block">

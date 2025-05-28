@@ -17,9 +17,10 @@ export async function POST(request: Request) {
     }
 
     console.log("Setting up email transport with credentials...")
-    console.log("Using EMAIL_USER:", process.env.EMAIL_USER) // Log without showing the full email
-    console.log("EMAIL_APP_PASSWORD is set:", !!process.env.EMAIL_APP_PASSWORD) // Just log if it exists
+    console.log("Using EMAIL_USER:", process.env.EMAIL_USER) 
+    console.log("EMAIL_APP_PASSWORD is set:", !!process.env.EMAIL_APP_PASSWORD) 
 
+    
     // Configure Gmail transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",

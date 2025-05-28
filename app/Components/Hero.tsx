@@ -14,13 +14,13 @@ const Hero = () => {
     <div
       className="relative bg-[#efecff] 2xl:px-60 lg:px-28 md:px-10 sm:px-10 px-5 
              flex flex-col-reverse lg:flex-row items-center justify-between
-             pt-24 sm:pt-10 md:pt-20 lg:pt-40 xl:pt-96  pb-20 
+              sm:pt-10 md:pt-20 lg:pt-40 xl:pt-96   
              xl:h-screen  overflow-hidden"
     >
       {/* Left Content */}
       <div className="w-full lg:w-3/5 pb-10 lg:pb-16 z-10">
-        <div className="mb-6">
-          <h1 className="font-playball text-[40px] 2xs:text-[44px] xs:text-[48px] sm:text-[56px] md:text-7xl lg:text-8xl xl:text-[128px] leading-none tracking-tight text-[#03045E] mb-8">
+        <div className="mb-6 ">
+          <h1 className="font-playball text-[40px] 2xs:text-[44px] xs:text-[48px] sm:text-[56px] md:text-7xl lg:text-8xl xl:text-[128px] leading-none tracking-tight text-[#03045E]">
             {heroData.firstName}
           </h1>
           <h1 className="font-playball text-[40px] 2xs:text-[44px] xs:text-[48px] sm:text-[56px] md:text-7xl lg:text-8xl xl:text-[128px] leading-none tracking-tight text-black -mt-2 sm:-mt-4 md:-mt-6">
@@ -49,13 +49,12 @@ const Hero = () => {
       </div>
 
       {/* Right Image */}
-      <div className="hidden lg:block absolute right-0  h-full w-1/2 justify-end pt-40 xl:pt-40">
+      <div className="hidden lg:block absolute right-0 -mt-36 h-full w-1/2 justify-end  ">
         <Image
           src={heroData.imageSrc}
           alt={heroData.imageAlt}
           fill
           className="object-contain object-bottom"
-          priority
         />
       </div>
 
@@ -76,3 +75,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+

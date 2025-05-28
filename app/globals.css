@@ -146,11 +146,8 @@ body {
 }
 
 .container-wrapper {
-  position: relative;
-  top: 160px;
+  left: 120px;
   right: 120px;
-  bottom: 160px;
-  left: 120px;
 }
 
 html {

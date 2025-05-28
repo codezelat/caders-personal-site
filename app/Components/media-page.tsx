@@ -8,10 +8,10 @@ function MediaPage() {
 
   return (
     <div className="bg-white flex flex-col font-poppins">
-      <div className="mx-auto py-8 px-4 md:py-16 md:px-16 sm:px-10 lg:px-32">
+      <div className="mx-auto py-8 px-4 md:py-10 md:px-16 sm:px-10 lg:px-32">
         {/* Header Section */}
-        <div className="text-left md:text-center mb-16 md:mb-16 sm:mb-10">
-          <h1 className="text-heading-responsive sm:text-4xl md:text-5xl font-bold text-black mb-20  md:mb-10 sm:mb-10">
+        <div className="text-left md:text-center mb-10 md:mb-16 sm:mb-10">
+          <h1 className="text-heading-responsive sm:text-4xl md:text-5xl font-bold text-black mb-10  md:mb-6 sm:mb-6">
             Media Features & Appearances
           </h1>
           <p className="text-gray-600 text-md leading-relaxed md:mx-auto">
