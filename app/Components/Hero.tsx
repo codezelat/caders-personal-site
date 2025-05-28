@@ -14,7 +14,7 @@ const Hero = () => {
     <div
       className="relative bg-[#efecff] 2xl:px-60 lg:px-28 md:px-10 sm:px-10 px-5 
              flex flex-col-reverse lg:flex-row items-center justify-between
-             pt-24 sm:pt-20 md:pt-20 lg:pt-40 xl:pt-60 pb-20 
+             pt-24 sm:pt-10 md:pt-20 lg:pt-40 xl:pt-96  pb-20 
              xl:h-screen  overflow-hidden"
     >
       {/* Left Content */}
@@ -43,12 +43,13 @@ const Hero = () => {
           ))}
         </div>
 
-        <Button onClick={handleExploreClick}>{heroData.ctaText}</Button>
+        <Button className="xl:mb-60" onClick={handleExploreClick}>
+          {heroData.ctaText}
+        </Button>
       </div>
 
       {/* Right Image */}
       <div className="hidden lg:block absolute right-0  h-full w-1/2 justify-end pt-40 xl:pt-40">
-
         <Image
           src={heroData.imageSrc}
           alt={heroData.imageAlt}

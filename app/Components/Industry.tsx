@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Industry: React.FC = () => {
   return (
-    <div className="relative w-full h-[450px] overflow-hidden">
+    <div className="relative w-full h-[850px] overflow-hidden">
       {/* Main city image */}
       <Image
         src="/images/gradient.jpg"
