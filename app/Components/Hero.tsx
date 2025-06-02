@@ -12,7 +12,7 @@ const Hero = () => {
 
   return (
     <div
-      className="relative bg-[#efecff] 2xl:px-60 lg:px-28 md:px-10 sm:px-10 px-5 
+      className="relative bg-[#efecff] 2xl:px-60 lg:px-28 md:px-10 sm:px-10 xs:px-10 px-5 
              flex flex-col-reverse lg:flex-row items-center justify-between
               sm:pt-10 md:pt-20 lg:pt-40 xl:pt-96   
              xl:h-screen  overflow-hidden"
@@ -60,7 +60,7 @@ const Hero = () => {
 
       {/* Mobile/Tablet Image (fallback) */}
       <div className="lg:hidden w-full flex justify-center mb-10">
-        <div className="relative w-full h-[500px] md:h-[700px]">
+        <div className="relative w-full h-[500px] md:h-[800px]">
           <Image
             src={heroData.imageSrc}
             alt={heroData.imageAlt}
@@ -75,5 +75,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-

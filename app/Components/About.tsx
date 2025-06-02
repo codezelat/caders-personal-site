@@ -33,7 +33,7 @@ const About: React.FC = () => {
   }, [galleryImages.length]);
 
   return (
-    <div className="pt-[100px] sm:pt-[40px] xs:pt-[40px] pb-[20px] bg-[#ffffff] xl:px-[120px] lg:px-[80px] md:px-[40px] sm:px-10 px-[20px] 2xl:h-screen">
+    <div className="pt-[100px] sm:pt-[40px] xs:pt-[40px] pb-[20px] bg-[#ffffff] xl:px-[120px] lg:px-[80px] md:px-[40px] sm:px-10 xs:px-10 px-[20px] 2xl:h-screen">
       <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col xs:flex-col 2xs:flex-col items-center justify-center gap-[40px]">
         <div>
           <div className="poppins-medium text-heading-responsive leading-[120%] sm:leading-none items-center pb-[40px]">
@@ -59,7 +59,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Fixed height image carousel container */}
-        <div className="relative w-full 2xs:w-[320px] xs:w-[375px] sm:w-[425px] md:px-10 sm:px-10 xs:px-5 2xs:px-5 md:w-[700px] lg:w-[800px] h-[220px] xs:h-[280px] sm:h-[320px] md:h-[420px] lg:h-[520px]">
+        <div className="relative w-full 2xs:w-[320px] xs:w-[375px] sm:w-[425px] md:px-10 sm:px-10 xs:px-10 2xs:px-5 md:w-[700px] lg:w-[800px] h-[220px] xs:h-[280px] sm:h-[320px] md:h-[420px] lg:h-[520px]">
           {/* Image carousel with fade transition */}
           <div className="relative w-full h-full rounded-[16px] md:rounded-[24px] lg:rounded-[32px] border-[4px] md:border-[6px] lg:border-[8px] border-[#03045E] overflow-hidden">
             {galleryImages.map((src, index) => (
@@ -80,8 +80,8 @@ const About: React.FC = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="flex  justify-center  mt-[40px] mb-[20px]">
-        <div className="flex xl:flex-row md:flex-row lg:flex-row sm:flex-col xs:flex-col 2xs:flex-col gap-32 xl:gap-[25px] md:gap-[20px] lg:gap-[20px] sm:gap-[10px] xs:gap-[10px] 2xs:gap-[10px]">
+      <div className="flex  justify-center  mt-[40px] mb-[20px] xs:mx-10 ">
+        <div className="flex xl:flex-row md:flex-row lg:flex-row  sm:flex-col xs:flex-col 2xs:flex-col gap-32 xl:gap-[25px] md:gap-[20px] lg:gap-[20px] sm:gap-[10px] xs:gap-[10px] 2xs:gap-[10px]">
           {stats.map((stat, index) => (
             <div
               key={index}

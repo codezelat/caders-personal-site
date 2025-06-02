@@ -92,7 +92,7 @@ const Gallery = () => {
     <>
       {/* Mobile Slider - Only visible on mobile screens */}
       <div className="block md:hidden w-full py-16 sm:py-10 bg-white">
-        <div className="relative px-4 sm:px-10">
+        <div className="relative px-4 sm:px-10 xs:px-10">
           <div
             className="rounded-3xl overflow-hidden h-[400px] w-full"
             onTouchStart={handleTouchStart}
