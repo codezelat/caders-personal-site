@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeItem, setActiveItem] = useState<string>("");
 
-  const navItems = ["About", "Leadership", "Ventures", "Investments", "Media"];
+  const navItems = ["About", "Leadership", "Ventures", "Gallery", "Media"];
 
   useEffect(() => {
     if (isSidebarOpen) {
