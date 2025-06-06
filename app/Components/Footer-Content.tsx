@@ -6,7 +6,6 @@ function FooterContent() {
     { name: "About", href: "#about" },
     { name: "Leadership", href: "#leadership" },
     { name: "Ventures", href: "#ventures" },
-    { name: "Investments", href: "#investments" },
     { name: "Media", href: "#media" },
     { name: "Contact", href: "#contact" },
   ];

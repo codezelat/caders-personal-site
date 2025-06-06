@@ -18,7 +18,7 @@ const Industry: React.FC = () => {
 
       {/* Text content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 z-20">
-        <h1 className="text-poppins-bold text-heading-responsive text-[60px] font-bold sm:leading-nomal ">
+        <h1 className="text-poppins-bold text-heading-responsive text-[60px] font-bold sm:leading-normal ">
           Investing in <br /> Visionaries Reshaping Industries
         </h1>
         <div className="gap-[40px] flex flex-col items-center justify-center mt-4">
