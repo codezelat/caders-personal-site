@@ -179,24 +179,28 @@ export default function ContactSection() {
                 <a
                   href="#"
                   className="text-white hover:text-blue-400 transition-colors"
+                  aria-label="LinkedIn"
                 >
                   <LinkedInIcon />
                 </a>
                 <a
                   href="#"
                   className="text-white hover:text-blue-400 transition-colors"
+                  aria-label="Twitter"
                 >
                   <XIcon />
                 </a>
                 <a
                   href="#"
                   className="text-white hover:text-blue-400 transition-colors"
+                  aria-label="Instagram"
                 >
                   <InstagramIcon />
                 </a>
                 <a
                   href="#"
                   className="text-white hover:text-blue-400 transition-colors"
+                  aria-label="Facebook"
                 >
                   <FacebookRoundedIcon />
                 </a>
