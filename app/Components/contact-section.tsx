@@ -7,20 +7,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import { RiTiktokFill } from "react-icons/ri";
 import type { ReactNode } from "react";
-
-const TikTokIcon = () => (
-  <svg
-    aria-hidden="true"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    focusable="false"
-  >
-    <path d="M14 3v6.35a4.8 4.8 0 1 1-1.5-3.37V3H14zm0 0a4.6 4.6 0 0 0 4.6 4.6V10a6.1 6.1 0 0 1-4.6-1.82z" />
-  </svg>
-);
 
 type SocialLink = {
   name: string;
@@ -41,7 +29,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     name: "TikTok",
-    icon: <TikTokIcon />,
+    icon: <RiTiktokFill size={24} />,
     href: "https://www.tiktok.com/@cader_rahmath",
   },
   {
