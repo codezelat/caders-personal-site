@@ -65,7 +65,7 @@ function MediaPage() {
                   {feature.dateline}
                 </span>
               </div>
-              <div className="flex-shrink-0 w-[200px] md:w-36 flex justify-center md:order-1 md:mx-20">
+              <div className="shrink-0 w-[200px] md:w-36 flex justify-center md:order-1 md:mx-20">
                 <Image
                   src={feature.logo}
                   alt={feature.logoAlt}

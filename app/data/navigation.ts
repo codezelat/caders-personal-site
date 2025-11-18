@@ -13,6 +13,8 @@ export const navigationLinks: NavigationLink[] = [
   { id: "contact", label: "Contact", href: "#contact" },
 ];
 
-export const contactLink = navigationLinks.find(
-  (link) => link.id === "contact"
-);
+export const contactLink: NavigationLink = {
+  id: "contact",
+  label: "Contact",
+  href: "#contact",
+};
