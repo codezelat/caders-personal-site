@@ -64,12 +64,12 @@ const Hero = () => {
 
       {/* Mobile/Tablet Image (fallback) */}
       <div className="lg:hidden w-full flex justify-center">
-        <div className="relative w-full h-[420px] sm:h-[500px] md:h-[500px]">
+        <div className="relative w-full h-[420px] sm:h-[500px] md:h-[520px]">
           <Image
             src={heroData.imageSrc}
             alt={heroData.imageAlt}
             fill
-            className="object-cover md:object-bottom rounded-xl"
+            className="object-contain object-bottom rounded-xl"
             priority
           />
         </div>
