@@ -34,16 +34,16 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="fixed top-4 left-[220px] xl:left-[120px] lg:left-[5px] md:left-0 sm:left-0 xs:left-0 2xs:left-0  w-full px-4 py-5 z-50 justify-start bg-transparent shadow-none flex  -mt-4 xl:pr-[220px]">
-        <div className="w-fit lg:w-full max-w-full 2xl:max-w-[2200px] bg-white/70 backdrop-blur-sm rounded-2xl px-4 py-3 sm:px-2 xs:px-2 2xs:px-2 sm:py-1 xs:py-1 2xs:py-1 shadow-md flex justify-between items-center">
-          {/* Logo - Hidden on mobile, visible on lg and above */}
-          <div className="text-2xl font-bold hidden lg:block">
-            <Link href="/">
-              <div className="playball-regular text-[32px] text-[#03045E]">
-                Cader{" "}
-                <span className="text-[20px] text-black">Rahmathulla</span>
-              </div>
-            </Link>
-          </div>
+        <div className="w-full max-w-full 2xl:max-w-[2200px] bg-white/70 backdrop-blur-sm rounded-2xl px-4 py-3 sm:px-3 sm:py-2 shadow-md flex items-center justify-between gap-4">
+          {/* Logo / Brand */}
+          <Link href="/" className="flex-shrink-0">
+            <div className="playball-regular text-[26px] sm:text-[30px] text-[#03045E] leading-none">
+              Cader{" "}
+              <span className="text-[18px] sm:text-[20px] text-black">
+                Rahmathulla
+              </span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex gap-4 items-center">
@@ -59,9 +59,11 @@ const Header: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <Link href={contactLink.href}>
-              <Button>Contact With Cader</Button>
-            </Link>
+            {contactLink && (
+              <Link href={contactLink.href}>
+                <Button>Contact With Cader</Button>
+              </Link>
+            )}
           </nav>
 
           {/* Mobile Menu Button */}

@@ -16,7 +16,7 @@ const Hero = () => {
     <section
       className="relative bg-[#efecff] overflow-hidden px-5 xs:px-10 sm:px-10 md:px-10 lg:px-28 2xl:px-60
         flex flex-col-reverse lg:flex-row items-center justify-between gap-10
-        pt-12 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-32
+        pt-12 sm:pt-16 md:pt-20 lg:pt-28 xl:pt-36
         pb-16 sm:pb-20 md:pb-24 lg:pb-32
         min-h-[85vh] sm:min-h-[90vh] md:min-h-screen"
     >
@@ -52,7 +52,7 @@ const Hero = () => {
       </div>
 
       {/* Right Image */}
-      <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2">
+      <div className="hidden lg:block absolute inset-y-0 right-0 w-[45%] max-w-[720px]">
         <Image
           src={heroData.imageSrc}
           alt={heroData.imageAlt}

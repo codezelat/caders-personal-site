@@ -1,18 +1,19 @@
 import React from "react";
+import Link from "next/link";
 
 function FooterPage() {
   return (
     <div className="bg-[#03045E] font-poppins">
-      <div className="flex flex-col md:flex-row items-center justify-between py-5 px-4 md:px-14 gap-2 md:gap-0">
-        {/* Copyright text */}
-        <p className="text-white text-center md:text-left text-small-responsive  order-2 md:order-1 xl:pl-28">
-          © 2025 Cader Rahmathulla. All rights reserved
+      <div className="flex flex-col gap-2 items-center justify-between py-5 px-4 md:px-14 text-white text-sm sm:text-base md:flex-row">
+        <p className="text-center md:text-left">
+          © {new Date().getFullYear()} Cader Rahmathulla. All rights reserved.
         </p>
-
-        {/* Terms and Privacy Policy */}
-        <p className="text-white text-center md:text-right text-small-responsive order-1 md:order-2 xl:pr-28">
+        <Link
+          href="/privacy"
+          className="text-center underline-offset-4 hover:underline"
+        >
           Privacy Policy
-        </p>
+        </Link>
       </div>
     </div>
   );
