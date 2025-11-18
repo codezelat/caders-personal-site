@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Header from "../Components/Header";
+import FooterContent from "../Components/Footer-Content";
+import FooterPage from "../Components/footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Cader Rahmathulla",
@@ -31,50 +34,63 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="bg-white text-[#0f172a]">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8 lg:px-0 py-16 sm:py-20">
-        <header className="mb-10 text-left">
-          <p className="font-poppins text-sm uppercase tracking-wide text-gray-500">
-            Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
-          </p>
-          <h1 className="font-playball text-4xl sm:text-5xl text-[#03045E] mb-4">
-            Privacy Policy
-          </h1>
-          <p className="font-poppins text-base sm:text-lg text-gray-600 leading-relaxed">
-            Transparency matters. This statement explains how information is
-            collected, stored, and used when you explore Cader Rahmathulla’s
-            site or reach out through the contact form.
-          </p>
-        </header>
+    <>
+      <Header />
+      <main className="bg-white text-[#0f172a] pt-32 pb-24 sm:pb-28">
+        <div className="mx-auto max-w-4xl px-5 sm:px-8 lg:px-0">
+          <header className="mb-10 text-left">
+            <p className="font-poppins text-sm uppercase tracking-wide text-gray-500">
+              Last updated:{" "}
+              {new Date().toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </p>
+            <h1 className="font-playball text-4xl sm:text-5xl text-[#03045E] mb-4">
+              Privacy Policy
+            </h1>
+            <p className="font-poppins text-base sm:text-lg text-gray-600 leading-relaxed">
+              Transparency matters. This statement explains how information is
+              collected, stored, and used when you explore Cader Rahmathulla’s
+              site or reach out through the contact form.
+            </p>
+          </header>
 
-        <section className="space-y-8 font-poppins">
-          {sections.map((section) => (
-            <article key={section.title} className="rounded-2xl border border-gray-100 bg-gray-50 p-6 sm:p-7">
-              <h2 className="text-xl sm:text-2xl font-semibold mb-3 text-[#03045E]">
-                {section.title}
-              </h2>
-              <p className="text-gray-700 leading-relaxed">{section.body}</p>
-            </article>
-          ))}
-        </section>
+          <section className="space-y-8 font-poppins">
+            {sections.map((section) => (
+              <article
+                key={section.title}
+                className="rounded-2xl border border-gray-100 bg-gray-50 p-6 sm:p-7"
+              >
+                <h2 className="text-xl sm:text-2xl font-semibold mb-3 text-[#03045E]">
+                  {section.title}
+                </h2>
+                <p className="text-gray-700 leading-relaxed">{section.body}</p>
+              </article>
+            ))}
+          </section>
 
-        <section className="mt-12 rounded-2xl bg-[#03045E] px-6 py-8 text-white font-poppins">
-          <h2 className="text-2xl font-semibold mb-2">Questions?</h2>
-          <p className="text-white/90 leading-relaxed mb-4">
-            Reach the SITC Group head office. We’re happy to clarify how your
-            data is handled or process any requests regarding this policy.
-          </p>
-          <div className="space-y-1 text-sm sm:text-base">
-            <p>SITC Group Head Office</p>
-            <a
-              href="mailto:info@sitc.lk"
-              className="underline-offset-2 hover:underline"
-            >
-              info@sitc.lk
-            </a>
-          </div>
-        </section>
-      </div>
-    </main>
+          <section className="mt-12 rounded-2xl bg-[#03045E] px-6 py-8 text-white font-poppins">
+            <h2 className="text-2xl font-semibold mb-2">Questions?</h2>
+            <p className="text-white/90 leading-relaxed mb-4">
+              Reach the SITC Group head office. We’re happy to clarify how your
+              data is handled or process any requests regarding this policy.
+            </p>
+            <div className="space-y-1 text-sm sm:text-base">
+              <p>SITC Group Head Office</p>
+              <a
+                href="mailto:info@sitc.lk"
+                className="underline-offset-2 hover:underline"
+              >
+                info@sitc.lk
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+      <FooterContent />
+      <FooterPage />
+    </>
   );
 }

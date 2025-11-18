@@ -36,7 +36,7 @@ function FooterContent() {
               <Link
                 key={link.id}
                 href={link.href}
-                scroll={link.href.startsWith("#")}
+                scroll={link.href.startsWith("/#")}
                 className="hover:text-gray-200 transition-colors"
               >
                 {link.label}
