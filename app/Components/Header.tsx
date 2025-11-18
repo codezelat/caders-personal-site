@@ -36,7 +36,7 @@ const Header: React.FC = () => {
       <header className="fixed top-4 left-[220px] xl:left-[120px] lg:left-[5px] md:left-0 sm:left-0 xs:left-0 2xs:left-0  w-full px-4 py-5 z-50 justify-start bg-transparent shadow-none flex  -mt-4 xl:pr-[220px]">
         <div className="w-full max-w-full 2xl:max-w-[2200px] bg-white/70 backdrop-blur-sm rounded-2xl px-4 py-3 sm:px-3 sm:py-2 shadow-md flex items-center justify-between gap-4">
           {/* Logo / Brand */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="shrink-0">
             <div className="playball-regular text-[26px] sm:text-[30px] text-[#03045E] leading-none">
               Cader{" "}
               <span className="text-[18px] sm:text-[20px] text-black">

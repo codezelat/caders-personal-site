@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Playball } from "next/font/google";
 import "./globals.css";
 import { seoProfile, siteUrl } from "./lib/seo";
+import GoogleAnalytics from "./Components/GoogleAnalytics";
 
 // Font configurations
 const poppins = Poppins({
@@ -105,6 +106,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} ${playball.variable} font-sans`}>
+        <GoogleAnalytics />
         {children}
       </body>
     </html>
