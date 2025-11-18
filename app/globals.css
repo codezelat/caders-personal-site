@@ -3,16 +3,52 @@
 @tailwind utilities;
 
 @layer utilities {
+  /* Responsive font-size utilities defined without using `@apply` with arbitrary values */
   .text-normal-responsive {
-    @apply xl:text-[23px] lg:text-[22px] md:text-[20px] sm:text-[18px] xs:text-[18px] 2xs:text-[18px];
+    font-size: 18px;
+  }
+  @screen md {
+    .text-normal-responsive {
+      font-size: 20px;
+    }
+  }
+  @screen lg {
+    .text-normal-responsive {
+      font-size: 22px;
+    }
+  }
+  @screen xl {
+    .text-normal-responsive {
+      font-size: 23px;
+    }
   }
 
   .text-heading-responsive {
-    @apply xl:text-[48px] lg:text-[40px] md:text-[40px] sm:text-[40px] xs:text-[40px] 2xs:text-[40px];
+    font-size: 40px;
+  }
+  @screen lg {
+    .text-heading-responsive {
+      font-size: 40px;
+    }
+  }
+  @screen xl {
+    .text-heading-responsive {
+      font-size: 48px;
+    }
   }
 
   .text-small-responsive {
-    @apply xl:text-[19px] lg:text-[18px] md:text-[18px] sm:text-[18px] xs:text-[18px] 2xs:text-[18px];
+    font-size: 18px;
+  }
+  @screen lg {
+    .text-small-responsive {
+      font-size: 18px;
+    }
+  }
+  @screen xl {
+    .text-small-responsive {
+      font-size: 19px;
+    }
   }
 }
 
@@ -46,9 +82,8 @@ body {
 }
 
 .font-playball {
-  font-family: 'Playball';
+  font-family: "Playball";
 }
-
 
 .poppins-thin {
   font-family: "Poppins";
@@ -173,10 +208,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 body {
   overflow-x: hidden;
 }
-
-
-
