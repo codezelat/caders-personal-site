@@ -1,16 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import { navigationLinks } from "../data/navigation";
 
 function FooterContent() {
-  const links = [
-    { name: "About", href: "#about" },
-    { name: "Leadership", href: "#leadership" },
-    { name: "Ventures", href: "#ventures" },
-    { name: "Investments", href: "#investments" },
-    { name: "Media", href: "#media" },
-    { name: "Contact", href: "#contact" },
-  ];
-
   return (
     <div className="bg-[#101827] py-8 px-4 sm:px-10 md:py-12 md:px-14">
       <div className="max-w-6xl mx-auto text-left md:text-center">
@@ -24,7 +16,10 @@ function FooterContent() {
 
         {/* Description */}
         <p className="font-poppins text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-8 md:mb-12 mx-0 md:mx-auto max-w-4xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Purpose-led investor, operator, and board advisor accelerating
+          high-impact ventures across education, technology, SaaS, and
+          infrastructure. I focus on building values-aligned teams and scalable
+          growth models that strengthen communities and deliver lasting value.
         </p>
 
         {/* Quick Links Title */}
@@ -34,9 +29,14 @@ function FooterContent() {
 
         {/* Links */}
         <div className="flex flex-wrap justify-start md:justify-center gap-x-4 gap-y-2 text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-poppins">
-          {links.map((link) => (
-            <Link key={link.name} href={link.href} scroll={true} className="hover:underline">
-              {link.name}
+          {navigationLinks.map((link) => (
+            <Link
+              key={link.id}
+              href={link.href}
+              scroll={true}
+              className="hover:underline"
+            >
+              {link.label}
             </Link>
           ))}
         </div>

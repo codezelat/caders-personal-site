@@ -1,36 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef, type TouchEvent } from "react"
-import Image from "next/image"
+import { useState, useEffect, useRef, type TouchEvent } from "react";
+import Image from "next/image";
 
 const Gallery = () => {
-  // Add this style tag at the beginning of your component
-  useEffect(() => {
-    const style = document.createElement("style")
-    style.textContent = `
-      @keyframes slide {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-2180px);
-        }
-      }
-      
-      .animate-slide {
-        animation: slide 20s linear infinite;
-      }
-      
-      .animate-slide:hover {
-        animation-play-state: paused;
-      }
-    `
-    document.head.appendChild(style)
-
-    return () => {
-      document.head.removeChild(style)
-    }
-  }, [])
   // Images array for the mobile slider
   const galleryImages = [
     "/images/gallery1.jpg",
@@ -43,50 +16,56 @@ const Gallery = () => {
     "/images/gallery3.jpg",
     "/images/gallery4.jpg",
     "/images/gallery5.jpg",
-  ]
+  ];
 
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const touchStartX = useRef(0)
-  const touchEndX = useRef(0)
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   // Auto-slide functionality (every 5 seconds)
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1))
-    }, 3000)
+      setCurrentSlide((prev) =>
+        prev === galleryImages.length - 1 ? 0 : prev + 1
+      );
+    }, 3000);
 
-    return () => clearInterval(interval)
-  }, [galleryImages.length])
+    return () => clearInterval(interval);
+  }, [galleryImages.length]);
 
   const handleTouchStart = (e: TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX
-  }
+    touchStartX.current = e.touches[0].clientX;
+  };
 
   const handleTouchEnd = (e: TouchEvent) => {
-    touchEndX.current = e.changedTouches[0].clientX
-    handleSwipe()
-  }
+    touchEndX.current = e.changedTouches[0].clientX;
+    handleSwipe();
+  };
 
   const handleSwipe = () => {
     // Minimum swipe distance (in px)
-    const minSwipeDistance = 50
+    const minSwipeDistance = 50;
 
-    const distance = touchStartX.current - touchEndX.current
+    const distance = touchStartX.current - touchEndX.current;
 
-    if (Math.abs(distance) < minSwipeDistance) return
+    if (Math.abs(distance) < minSwipeDistance) return;
 
     if (distance > 0) {
-      setCurrentSlide((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1))
+      setCurrentSlide((prev) =>
+        prev === galleryImages.length - 1 ? 0 : prev + 1
+      );
     } else {
-      setCurrentSlide((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1))
+      setCurrentSlide((prev) =>
+        prev === 0 ? galleryImages.length - 1 : prev - 1
+      );
     }
-  }
+  };
 
   // Function to get the appropriate dot index for the limited dots display
   const getDotIndex = (index: number) => {
-    return Math.floor((index * 5) / galleryImages.length)
-  }
+    return Math.floor((index * 5) / galleryImages.length);
+  };
 
   return (
     <>
@@ -114,11 +93,15 @@ const Gallery = () => {
                 key={dotIndex}
                 onClick={() => {
                   // Calculate which slide this dot represents
-                  const targetSlide = Math.floor((dotIndex * galleryImages.length) / 5)
-                  setCurrentSlide(targetSlide)
+                  const targetSlide = Math.floor(
+                    (dotIndex * galleryImages.length) / 5
+                  );
+                  setCurrentSlide(targetSlide);
                 }}
                 className={`w-2 h-2 rounded-full ${
-                  getDotIndex(currentSlide) === dotIndex ? "bg-[#03045E] " : "bg-gray-300"
+                  getDotIndex(currentSlide) === dotIndex
+                    ? "bg-[#03045E] "
+                    : "bg-gray-300"
                 }`}
                 aria-label={`Go to slide group ${dotIndex + 1}`}
               />
@@ -130,9 +113,9 @@ const Gallery = () => {
       {/* Desktop/Tablet Sliding Gallery - Hidden on mobile */}
       <div className="hidden md:block relative w-full overflow-hidden bg-white py-16 mb-20">
         <div
-          className="flex gap-5 animate-slide"
+          className="flex gap-5 animate-gallery-slide"
           style={{
-            width: "calc(4360px)", 
+            width: "4360px",
             height: "671px",
           }}
         >
@@ -357,7 +340,7 @@ const Gallery = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Gallery
+export default Gallery;

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import MobileviewLeadershipPage from "./mobileview-leadership";
+import { leadershipData } from "../data/leadershipData";
 
 const LeadershipPortfolio = () => {
   return (
@@ -37,95 +38,60 @@ const LeadershipPortfolio = () => {
 
           {/* Left column - Logos */}
           <div className="w-1/3 pr-10">
-            <div className="flex justify-end items-center h-24 mb-32">
-              <div className="w-[200px] h-[60px] sm:h-[80px] relative">
-                <Image
-                  src="/images/lbcicon.png"
-                  alt="London Business Consultancy"
-                  fill
-                  className="object-contain"
-                />
+            {leadershipData.map((role, index) => (
+              <div
+                key={role.id}
+                className={`flex justify-end items-center h-24 ${
+                  index < leadershipData.length - 1 ? "mb-32" : ""
+                }`}
+              >
+                <div
+                  className="relative"
+                  style={{
+                    width: role.logoWidth,
+                    height: role.logoHeight,
+                  }}
+                >
+                  <Image
+                    src={role.logoSrc}
+                    alt={role.logoAlt}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="flex justify-end items-center h-24 mb-32">
-              <div className="w-[200px] h-[70px] sm:h-[50px] relative">
-                <Image
-                  src="/images/Sitc.jpg"
-                  alt="SITC Campus"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
-            <div className="flex justify-end items-center h-24">
-              <div className="w-[207px] h-[90px] sm:h-[120px] relative">
-                <Image
-                  src="/images/codezela.png"
-                  alt="Codezela Technologies"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Middle column - Timeline nodes and horizontal lines */}
           <div className="w-1/3 relative">
-            {/* First node and line */}
-            <div className="relative flex items-center h-24 mb-32">
-              {/* Center node */}
-              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
-              {/* Line from center to right */}
-              <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
-              {/* Right dot */}
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
-            </div>
-
-            {/* Second node and line */}
-            <div className="relative flex items-center h-24 mb-32">
-              {/* Center node */}
-              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
-              {/* Line from center to right */}
-              <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
-              {/* Right dot */}
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
-            </div>
-
-            {/* Third node and line */}
-            <div className="relative flex items-center h-24">
-              {/* Center node */}
-              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
-              {/* Line from center to right */}
-              <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
-              {/* Right dot */}
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
-            </div>
+            {leadershipData.map((role, index) => (
+              <div
+                key={`timeline-${role.id}`}
+                className={`relative flex items-center h-24 ${
+                  index < leadershipData.length - 1 ? "mb-32" : ""
+                }`}
+              >
+                <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
+                <div className="absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 border-black border-dashed"></div>
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-black rounded-full z-10"></div>
+              </div>
+            ))}
           </div>
 
           {/* Right column - Text content */}
           <div className="w-1/3 pl-10">
-            <div className="flex flex-col justify-center h-24 mb-32">
-              <p className="text-gray-600 text-lg mb-1 ">
-                Expanding Global Strategy
-              </p>
-              <h3 className="text-[20px] font-bold">
-                Executive Board Member – LBC UK
-              </h3>
-            </div>
-            <div className="flex flex-col justify-center h-24 mb-32">
-              <p className="text-gray-600 text-lg mb-1">
-                Transforming Education
-              </p>
-              <h3 className="text-[20px] font-bold">CEO – SITC Campus</h3>
-            </div>
-            <div className="flex flex-col justify-center h-24">
-              <p className="text-gray-600 text-lg mb-1">
-                Fueling Digital Innovation
-              </p>
-              <h3 className="text-[20px] font-bold">
-                COO – Codezela Technologies
-              </h3>
-            </div>
+            {leadershipData.map((role, index) => (
+              <div
+                key={`description-${role.id}`}
+                className={`flex flex-col justify-center h-24 ${
+                  index < leadershipData.length - 1 ? "mb-32" : ""
+                }`}
+              >
+                <p className="text-gray-600 text-lg mb-1 ">{role.category}</p>
+                <h3 className="text-[20px] font-bold">{role.title}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </div>

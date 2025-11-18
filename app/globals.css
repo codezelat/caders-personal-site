@@ -26,6 +26,25 @@ body {
   color: var(--foreground);
 }
 
+.animate-gallery-slide {
+  animation: gallery-slide 20s linear infinite;
+}
+
+@keyframes gallery-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2180px);
+  }
+}
+
+@media (hover: hover) {
+  .animate-gallery-slide:hover {
+    animation-play-state: paused;
+  }
+}
+
 .font-playball {
   font-family: 'Playball';
 }
@@ -158,7 +177,6 @@ html {
 body {
   overflow-x: hidden;
 }
-
 
 
 

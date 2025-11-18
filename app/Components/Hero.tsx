@@ -7,7 +7,9 @@ import { heroData } from "../data/herodata";
 
 const Hero = () => {
   const handleExploreClick = () => {
-    console.log("Explore My Ventures clicked");
+    if (!heroData.ctaTargetId) return;
+    const section = document.getElementById(heroData.ctaTargetId);
+    section?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -55,6 +57,7 @@ const Hero = () => {
           alt={heroData.imageAlt}
           fill
           className="object-contain object-bottom"
+          priority
         />
       </div>
 

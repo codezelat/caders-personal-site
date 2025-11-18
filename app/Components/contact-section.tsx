@@ -9,6 +9,29 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    icon: <LinkedInIcon />,
+    href: "https://www.linkedin.com/in/caderrahmathulla",
+  },
+  {
+    name: "X",
+    icon: <XIcon />,
+    href: "https://x.com/caderrahmathulla",
+  },
+  {
+    name: "Instagram",
+    icon: <InstagramIcon />,
+    href: "https://www.instagram.com/caderrahmathulla",
+  },
+  {
+    name: "Facebook",
+    icon: <FacebookRoundedIcon />,
+    href: "https://www.facebook.com/caderrahmathulla",
+  },
+];
+
 export default function ContactSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -166,7 +189,12 @@ export default function ContactSection() {
                 Connect Directly
               </h3>
               <p className="text-gray-400">Business Assistant</p>
-              <p className="text-gray-400">assistant@caderrahmatulla.com</p>
+              <a
+                href="mailto:assistant@caderrahmathulla.com"
+                className="text-gray-200 underline-offset-2 hover:underline"
+              >
+                assistant@caderrahmathulla.com
+              </a>
             </div>
 
             <div className="border-t border-gray-700 my-4 md:my-6"></div>
@@ -176,30 +204,18 @@ export default function ContactSection() {
                 Follow & Connect
               </h3>
               <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-400 transition-colors"
-                >
-                  <LinkedInIcon />
-                </a>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-400 transition-colors"
-                >
-                  <XIcon />
-                </a>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-400 transition-colors"
-                >
-                  <InstagramIcon />
-                </a>
-                <a
-                  href="#"
-                  className="text-white hover:text-blue-400 transition-colors"
-                >
-                  <FacebookRoundedIcon />
-                </a>
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit Cader's ${link.name} profile`}
+                    className="text-white hover:text-blue-400 transition-colors"
+                  >
+                    {link.icon}
+                  </a>
+                ))}
               </div>
             </div>
 

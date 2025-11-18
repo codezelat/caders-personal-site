@@ -4,12 +4,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import React, { useState, useEffect } from "react";
 import Button from "./ui/Button";
+import {
+  contactLink,
+  navigationLinks,
+  type NavigationLink,
+} from "../data/navigation";
 
 const Header: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeItem, setActiveItem] = useState<string>("");
 
-  const navItems = ["About", "Leadership", "Ventures", "Investments", "Media"];
+  const navItems = navigationLinks.filter((link) => link.id !== "contact");
 
   useEffect(() => {
     if (isSidebarOpen) {
@@ -21,8 +26,8 @@ const Header: React.FC = () => {
       document.body.classList.remove("overflow-hidden");
     };
   }, [isSidebarOpen]);
-  function handleClick(item: string): void {
-    setActiveItem(item);
+  function handleClick(item: NavigationLink): void {
+    setActiveItem(item.id);
     setIsSidebarOpen(false);
   }
 
@@ -44,19 +49,21 @@ const Header: React.FC = () => {
           <nav className="hidden lg:flex gap-4 items-center">
             <ul className="flex gap-[10px] items-center">
               {navItems.map((item) => (
-                <li key={item}>
+                <li key={item.id}>
                   <Link
-                    href={`#${item.toLowerCase()}`}
+                    href={item.href}
                     className="poppins-medium text-base hover:text-[#03045E] transition-colors px-[16px] py-[8px] rounded-[8px]"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <Link href="#contact">
+            {contactLink && (
+              <Link href={contactLink.href}>
               <Button>Contact With Cader</Button>
             </Link>
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -85,9 +92,6 @@ const Header: React.FC = () => {
           >
             <div className="flex flex-col justify-between h-full">
               <div className="flex items-center justify-between px-4 py-4 ">
-                {/* <span className="text-xl font-semibold text-[#03045E]">
-                  Menu
-                </span> */}
                 <button
                   onClick={() => setIsSidebarOpen(false)}
                   aria-label="Close menu"
@@ -98,36 +102,38 @@ const Header: React.FC = () => {
 
               <ul className="flex flex-col items-center p-4 gap-5 w-full">
                 {navItems.map((item) => (
-                  <li key={item} className="w-full">
+                  <li key={item.id} className="w-full">
                     <Link
-                      href={`#${item.toLowerCase()}`}
+                      href={item.href}
                       onClick={() => handleClick(item)}
                       className={`block text-lg font-bold text-center p-2 rounded-[8px] transition-colors w-full
           ${
-            activeItem === item
+            activeItem === item.id
               ? "bg-gray-200 text-[#03045E]" // <-- ACTIVE: new text color
               : "text-[#03055ea5] hover:underline"
           }`}
                     >
-                      {item}
+                      {item.label}
                     </Link>
                     <hr className="border-t border-gray-300 w-3/4 mx-auto" />
                   </li>
                 ))}
 
-                <li className="w-full">
-                  <Link
-                    href="#contact"
-                    onClick={() => handleClick("Contact")}
-                    className={`block text-lg font-bold text-center p-2 bg-[#03045E] text-[#03045E] rounded-[8px] transition-colors w-full ${
-                      activeItem === "Contact"
-                        ? "bg-gray-200 text-[#03045E]"
-                        : "text-[#ffffff] hover:underline"
-                    }`}
-                  >
-                    Contact With Cader
-                  </Link>
-                </li>
+                {contactLink && (
+                  <li className="w-full">
+                    <Link
+                      href={contactLink.href}
+                      onClick={() => handleClick(contactLink)}
+                      className={`block text-lg font-bold text-center p-2 rounded-[8px] transition-colors w-full ${
+                        activeItem === contactLink.id
+                          ? "bg-gray-200 text-[#03045E]"
+                          : "bg-[#03045E] text-white hover:bg-[#050674]"
+                      }`}
+                    >
+                      Contact With Cader
+                    </Link>
+                  </li>
+                )}
               </ul>
 
               <div className="px-4 py-6 border-t text-sm text-gray-500 text-center">
