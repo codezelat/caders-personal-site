@@ -32,11 +32,13 @@ Purpose-built personal site for Cader Rahmathulla showcasing leadership highligh
 Create a `.env.local` file with the following keys to enable the contact form:
 
 ```
+NEXT_PUBLIC_SITE_URL=https://www.caderrahmathulla.com
 EMAIL_USER=you@example.com
 EMAIL_APP_PASSWORD=app-specific-password
 EMAIL_TO=optional-recipient@example.com
 ```
 
+- `NEXT_PUBLIC_SITE_URL`: Base URL used for canonical tags, sitemap, and structured data.
 - `EMAIL_USER`: Gmail address used by Nodemailer.
 - `EMAIL_APP_PASSWORD`: Gmail app password (not your main password).
 - `EMAIL_TO`: Optional override for the recipient; defaults to `EMAIL_USER`.
