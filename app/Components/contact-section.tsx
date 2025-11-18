@@ -3,32 +3,51 @@
 import type React from "react";
 import { useState } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import XIcon from "@mui/icons-material/X";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import type { ReactNode } from "react";
 
-const socialLinks = [
+const TikTokIcon = () => (
+  <svg
+    aria-hidden="true"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    focusable="false"
+  >
+    <path d="M14 3v6.35a4.8 4.8 0 1 1-1.5-3.37V3H14zm0 0a4.6 4.6 0 0 0 4.6 4.6V10a6.1 6.1 0 0 1-4.6-1.82z" />
+  </svg>
+);
+
+type SocialLink = {
+  name: string;
+  icon: ReactNode;
+  href: string;
+};
+
+const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
     icon: <LinkedInIcon />,
-    href: "https://www.linkedin.com/in/caderrahmathulla",
-  },
-  {
-    name: "X",
-    icon: <XIcon />,
-    href: "https://x.com/caderrahmathulla",
+    href: "https://www.linkedin.com/in/cader-rahmathulla-8274a8155",
   },
   {
     name: "Instagram",
     icon: <InstagramIcon />,
-    href: "https://www.instagram.com/caderrahmathulla",
+    href: "https://www.instagram.com/cader_rahmath",
+  },
+  {
+    name: "TikTok",
+    icon: <TikTokIcon />,
+    href: "https://www.tiktok.com/@cader_rahmath",
   },
   {
     name: "Facebook",
     icon: <FacebookRoundedIcon />,
-    href: "https://www.facebook.com/caderrahmathulla",
+    href: "https://www.facebook.com/cader.rahmath",
   },
 ];
 
@@ -186,14 +205,14 @@ export default function ContactSection() {
           <div className="bg-[#131722] p-4 md:p-6 rounded-lg">
             <div className="mb-6 md:mb-8">
               <h3 className="text-lg md:text-xl font-semibold mb-2">
-                Connect Directly
+                Contact Head Office
               </h3>
-              <p className="text-gray-400">Business Assistant</p>
+              <p className="text-gray-400">SITC Group</p>
               <a
-                href="mailto:assistant@caderrahmathulla.com"
+                href="mailto:info@sitc.lk"
                 className="text-gray-200 underline-offset-2 hover:underline"
               >
-                assistant@caderrahmathulla.com
+                info@sitc.lk
               </a>
             </div>
 

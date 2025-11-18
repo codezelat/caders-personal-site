@@ -1,23 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-2xs: 320px;
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 425px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-2xl: 1920px;
+  --breakpoint-3xl: 2560px;
+
+  --color-primary: #03045e;
+  --color-primary-dark: #02034a;
+
+  --font-family-playball: var(--font-playball);
+  --font-family-poppins: var(--font-poppins);
+}
 
 @layer utilities {
-  /* Responsive font-size utilities defined without using `@apply` with arbitrary values */
   .text-normal-responsive {
     font-size: 18px;
   }
-  @screen md {
+  @media (min-width: 768px) {
     .text-normal-responsive {
       font-size: 20px;
     }
   }
-  @screen lg {
+  @media (min-width: 1024px) {
     .text-normal-responsive {
       font-size: 22px;
     }
   }
-  @screen xl {
+  @media (min-width: 1440px) {
     .text-normal-responsive {
       font-size: 23px;
     }
@@ -26,12 +40,7 @@
   .text-heading-responsive {
     font-size: 40px;
   }
-  @screen lg {
-    .text-heading-responsive {
-      font-size: 40px;
-    }
-  }
-  @screen xl {
+  @media (min-width: 1440px) {
     .text-heading-responsive {
       font-size: 48px;
     }
@@ -40,12 +49,7 @@
   .text-small-responsive {
     font-size: 18px;
   }
-  @screen lg {
-    .text-small-responsive {
-      font-size: 18px;
-    }
-  }
-  @screen xl {
+  @media (min-width: 1440px) {
     .text-small-responsive {
       font-size: 19px;
     }
