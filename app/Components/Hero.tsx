@@ -64,7 +64,7 @@ const Hero = () => {
 
       {/* Mobile/Tablet Image (fallback) */}
       <div className="lg:hidden w-full flex justify-center">
-        <div className="relative w-full h-[420px] sm:h-[500px] md:h-[560px]">
+        <div className="relative w-full h-[420px] sm:h-[500px] md:h-[500px]">
           <Image
             src={heroData.imageSrc}
             alt={heroData.imageAlt}
